@@ -931,18 +931,20 @@
   },
   "availabilityZone1": {
    "Description": "Availability Zone",
-   "Value": 
-    {
-    "Ref": "availabilityZone1"
-   }
+   "Value": {
+    "Fn::GetAtt": [
+     "Bigip1Instance",
+     "AvailabilityZone"
+    ]
    }
   },
   "availabilityZone2": {
    "Description": "Availability Zone",
-   "Value": 
-    {
-    "Ref": "availabilityZone2"
-   }
+   "Value": {
+    "Fn::GetAtt": [
+     "Bigip2Instance",
+     "AvailabilityZone"
+    ]
   },
   "bigipExternalSecurityGroup": {
    "Description": "Public or External Security Group",
