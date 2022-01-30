@@ -5,7 +5,7 @@
           "subnet1Az1" : "subnet-0420aa08bdce8ab69",
           "subnet1Az2" : "subnet-0ab430989103f3ba7",
           "subnet2Az1" : "subnet-0da81c7cf75177937",
-          "subnet2Az2" : "subnet-0da81c7cf75177937",
+          "subnet2Az2" : "subnet-041c9d5a8ce1508aa",
           "provisionPublicIP" : "No",
           "imageName" : "AllTwoBootLocations",
           "instanceType" : "m5.xlarge",
