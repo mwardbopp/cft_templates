@@ -8,7 +8,6 @@
           "subnet2Az2" : "subnet-0da81c7cf75177937",
           "provisionPublicIP" : "No",
           "imageName" : "AllTwoBootLocations",
-          "customImageId" : "",
           "instanceType" : "m5.xlarge",
           "sshKey" : "wardbopp-keypair",
           "restrictedSrcAddress" : "10.0.0.0/16",
@@ -25,10 +24,6 @@
           "bigIqUsername" : "licensemgr",
           "bigIqPasswordS3Arn" : "arn:aws:s3:::mwb-big-iq-password/password_file.txt",
           "bigIqLicensePoolName" : "aws",
-          "bigIqLicenseTenant" : "",
-          "bigIqLicenseUnitOfMeasure" : "",
-          "bigIqLicenseSkuKeyword1" : "",
-          "bigIqLicenseSkuKeyword2" : "",
           "allowUsageAnalytics" : "No",
           "allowPhoneHome" : "No"
           }
