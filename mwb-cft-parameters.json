@@ -6,8 +6,6 @@
           "subnet1Az2" : "subnet-0ab430989103f3ba7",
           "subnet2Az1" : "subnet-0da81c7cf75177937",
           "subnet2Az2" : "subnet-0da81c7cf75177937",
-          "availabilityZone1" : "eu-west-1a",
-          "availabilityZone2" : "eu-west-1b",
           "provisionPublicIP" : "No",
           "imageName" : "AllTwoBootLocations",
           "customImageId" : "",
