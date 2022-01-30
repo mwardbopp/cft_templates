@@ -3394,7 +3394,7 @@
     "PrivateIpAddresses" : [
      { "PrivateIpAddress" : "172.16.102.100", "Primary" : "true" },
      { "PrivateIpAddress" : "172.16.102.200", "Primary" : "false" },
-     { "PrivateIpAddress" : "172.16.102.201", "Primary" : "false" },
+     { "PrivateIpAddress" : "172.16.102.201", "Primary" : "false" }
     ],
     "SubnetId": {
      "Ref": "subnet1Az2"
@@ -3893,5 +3893,8 @@
    },
    "Type": "AWS::IAM::InstanceProfile"
   }
- }
+  }
 }
+}
+}
+
