@@ -963,7 +963,9 @@
    "Value": {
     "Ref": "bigipManagementSecurityGroup"
    }
-  },
+  }
+  }
+},
  "Parameters": {
   "Vpc": {
    "ConstraintDescription": "This must be an existing VPC within the working region.",
@@ -3895,6 +3897,3 @@
   }
   }
 }
-}
-}
-
