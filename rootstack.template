@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+  F5-3NIC-BIGIQ-LicensedStack:
+    Type: AWS::CloudFormation::Stack
+      Properties: 
+        Parameters:
+          Vpc : "vpc-0101d41e7b5e8e421"
+          managementSubnetAz1 : "subnet-0eff71c70346a5103"
+          managementSubnetAz2 : "subnet-0233f845a311851b2"
+          subnet1Az1 : "subnet-0420aa08bdce8ab69"
+          subnet1Az2 : "subnet-0ab430989103f3ba7"
+          subnet2Az1 : "subnet-0da81c7cf75177937"
+          subnet2Az2 : "subnet-0da81c7cf75177937"
+          availabilityZone1 : "eu-west-1a"
+          availabilityZone2 : "eu-west-1b"
+          numberOfAdditionalNics :
+          additionalNicLocation :
+          provisionPublicIP : "No"
+          imageName : "AllTwoBootLocations"
+          customImageId :
+          instanceType : "m5.xlarge"
+          applicationInstanceType :
+          licenseKey1 :
+          licenseKey2 :
+          managementGuiPort :
+          sshKey : "wardbopp-keypair"
+          restrictedSrcAddress : "10.0.0.0/16"
+          restrictedSrcAddressApp : "10.0.0.0/16"
+          ntpServer : "0.pool.ntp.org"
+          timezone : "UTC"
+          bigIpModules : "ltm:nominal"
+          application : "f5demo"
+          environment : "demo"
+          group : 
+          owner : "m.ward-bopp@f5.com"
+          costcenter : "f5costcenter"
+          bigIqAddress : "10.0.1.6"
+          bigIqUsername : "licensemgr"
+          bigIqPasswordS3Arn : "	arn:aws:s3:::mwb-big-iq-password/password_file.txt"
+          bigIqLicensePoolName : "aws"
+          bigIqLicenseTenant :
+          bigIqLicenseUnitOfMeasure :
+          bigIqLicenseSkuKeyword1 :
+          bigIqLicenseSkuKeyword2 :
+          allowUsageAnalytics : "No"
+          allowPhoneHome : "No"
+          declarationUrl :
+        TemplateURL: "https://raw.githubusercontent.com/mwardbopp/cft_templates/main/test3nic-updated-local.extCFE-iam-bigiq.template"
