@@ -17,38 +17,6 @@
     }
    ]
   },
-  "noSkuKeyword1": {
-   "Fn::Equals": [
-    "OPTIONAL",
-    {
-     "Ref": "bigIqLicenseSkuKeyword1"
-    }
-   ]
-  },
-  "noSkuKeyword2": {
-   "Fn::Equals": [
-    "OPTIONAL",
-    {
-     "Ref": "bigIqLicenseSkuKeyword2"
-    }
-   ]
-  },
-  "noTenant": {
-   "Fn::Equals": [
-    "OPTIONAL",
-    {
-     "Ref": "bigIqLicenseTenant"
-    }
-   ]
-  },
-  "noUnitOfMeasure": {
-   "Fn::Equals": [
-    "OPTIONAL",
-    {
-     "Ref": "bigIqLicenseUnitOfMeasure"
-    }
-   ]
-  },
   "usePublicIP": {
    "Fn::Equals": [
     "Yes",
@@ -314,22 +282,67 @@
     "PerAppVeAwaf25Mbps": "ami-07dfb73feeb553b77"
    },
    "eu-west-1": {
-    "AllOneBootLocation": "ami-0fb9a63625fb791a0",
-    "AllTwoBootLocations": "ami-0407cd5667b54e56e",
-    "LTMOneBootLocation": "ami-0abaec294600012c9",
-    "LTMTwoBootLocations": "ami-01a88407d4c6866a9"
+    "AdvancedWaf200Mbps": "ami-0c0add483fd2482a0",
+    "AdvancedWaf25Mbps": "ami-00b1ab1e4626f592e",
+    "Best10000Mbps": "ami-0d4bf59f5e3d3cc9e",
+    "Best1000Mbps": "ami-082928201d4fb05b6",
+    "Best200Mbps": "ami-0a63e05cbe0c38003",
+    "Best25Mbps": "ami-089796e5e47961ac5",
+    "Best5000Mbps": "ami-06ddc3b8a6cf95330",
+    "Better10000Mbps": "ami-0e3000ad26f309010",
+    "Better1000Mbps": "ami-0b84c5ef88cce26b5",
+    "Better200Mbps": "ami-0e39581b979906bc0",
+    "Better25Mbps": "ami-08c16a8a8d8e46845",
+    "Better5000Mbps": "ami-01d9cff0b282734bb",
+    "Good10000Mbps": "ami-065db68e46b143bfd",
+    "Good1000Mbps": "ami-0414a3902918be91d",
+    "Good200Mbps": "ami-0045f1bf3fe2063b6",
+    "Good25Mbps": "ami-0d9a8f0c1086e9a15",
+    "Good5000Mbps": "ami-0a918564d8268b00a",
+    "PerAppVeAwaf200Mbps": "ami-0763ee91ec293e7f8",
+    "PerAppVeAwaf25Mbps": "ami-0c4008f7a3345c3b2"
    },
    "eu-west-2": {
-    "AllOneBootLocation": "ami-06dd81d4eb81afec0",
-    "AllTwoBootLocations": "ami-0dec8a9207cf00747",
-    "LTMOneBootLocation": "ami-06a8bc6c56a191401",
-    "LTMTwoBootLocations": "ami-0faf7bf09b689652f"
+    "AdvancedWaf200Mbps": "ami-0386bbb6a15d366dd",
+    "AdvancedWaf25Mbps": "ami-0dd28f529175f31bf",
+    "Best10000Mbps": "ami-07e27072400a644ce",
+    "Best1000Mbps": "ami-07eef86309f455615",
+    "Best200Mbps": "ami-00398a760071f2848",
+    "Best25Mbps": "ami-01b51c16d2394670e",
+    "Best5000Mbps": "ami-0fe86d36bfda2b6fc",
+    "Better10000Mbps": "ami-0cd3b4f181dc93536",
+    "Better1000Mbps": "ami-057422066649d62d5",
+    "Better200Mbps": "ami-0aa1b9c7d2ded97fd",
+    "Better25Mbps": "ami-05eb77f6e8d6711d6",
+    "Better5000Mbps": "ami-0068257176669a1d3",
+    "Good10000Mbps": "ami-034da4f43d05c559e",
+    "Good1000Mbps": "ami-056733da7db05b41e",
+    "Good200Mbps": "ami-0f9f420038697e8e5",
+    "Good25Mbps": "ami-0618889529bb40b63",
+    "Good5000Mbps": "ami-0f5046d900703cf8f",
+    "PerAppVeAwaf200Mbps": "ami-01a90a4275ff8adcd",
+    "PerAppVeAwaf25Mbps": "ami-00d181287586c1e94"
    },
    "eu-west-3": {
-    "AllOneBootLocation": "ami-0752f560314923beb",
-    "AllTwoBootLocations": "ami-0e043ba276505237d",
-    "LTMOneBootLocation": "ami-0f0d8ebb277d0b028",
-    "LTMTwoBootLocations": "ami-0429f893b4332b9ef"
+    "AdvancedWaf200Mbps": "ami-0fd614d052b11f604",
+    "AdvancedWaf25Mbps": "ami-0bf1b11103d6c048a",
+    "Best10000Mbps": "ami-095e6bd7c76c7b2cf",
+    "Best1000Mbps": "ami-03a5d6e258012f1dd",
+    "Best200Mbps": "ami-01b9c15dc7c44e309",
+    "Best25Mbps": "ami-0daa7bee354c28fc9",
+    "Best5000Mbps": "ami-0a23662b711f51c11",
+    "Better10000Mbps": "ami-04a5c1757cc7b30eb",
+    "Better1000Mbps": "ami-01615a900e7e79768",
+    "Better200Mbps": "ami-0a42be8463fc8dce0",
+    "Better25Mbps": "ami-0fc2e463b4cd1fbf2",
+    "Better5000Mbps": "ami-0c650cbec8eae563d",
+    "Good10000Mbps": "ami-0cf9ae27ebb15e894",
+    "Good1000Mbps": "ami-0c65659ce14504068",
+    "Good200Mbps": "ami-03d49e2268019ead8",
+    "Good25Mbps": "ami-07fc84cc10486764b",
+    "Good5000Mbps": "ami-0814f8fd1d6a4ea11",
+    "PerAppVeAwaf200Mbps": "ami-0675567a279bd6e92",
+    "PerAppVeAwaf25Mbps": "ami-08976001341c8f1e7"
    },
    "me-south-1": {
     "AdvancedWaf200Mbps": "ami-0b41b6c8ec95464f3",
@@ -556,21 +569,6 @@
       "costcenter"
      ]
     },
-    {
-     "Label": {
-      "default": "BIG-IQ LICENSING CONFIGURATION"
-     },
-     "Parameters": [
-      "bigIqAddress",
-      "bigIqUsername",
-      "bigIqPasswordS3Arn",
-      "bigIqLicensePoolName",
-      "bigIqLicenseTenant",
-      "bigIqLicenseUnitOfMeasure",
-      "bigIqLicenseSkuKeyword1",
-      "bigIqLicenseSkuKeyword2"
-     ]
-    },
     {},
     {
      "Label": {
@@ -617,30 +615,6 @@
     },
     "bigIpModules": {
      "default": "BIG-IP Modules"
-    },
-    "bigIqAddress": {
-     "default": "BIG-IQ address (private)"
-    },
-    "bigIqLicensePoolName": {
-     "default": "BIG-IQ License Pool Name"
-    },
-    "bigIqLicenseSkuKeyword1": {
-     "default": "BIG-IQ SKU Keyword 1"
-    },
-    "bigIqLicenseSkuKeyword2": {
-     "default": "BIG-IQ SKU Keyword 2"
-    },
-    "bigIqLicenseTenant": {
-     "default": "BIG-IQ Tenant"
-    },
-    "bigIqLicenseUnitOfMeasure": {
-     "default": "BIG-IQ Unit Of Measure"
-    },
-    "bigIqPasswordS3Arn": {
-     "default": "S3 ARN of the BIG-IQ Password File"
-    },
-    "bigIqUsername": {
-     "default": "BIG-IQ user with Licensing Privileges"
     },
     "costcenter": {
      "default": "Cost Center"
@@ -965,7 +939,7 @@
     "Ref": "bigipManagementSecurityGroup"
    }
   }
-},
+ },
  "Parameters": {
   "Vpc": {
    "ConstraintDescription": "This must be an existing VPC within the working region.",
@@ -999,66 +973,6 @@
    "Description": "Comma separated list of modules and levels to provision, for example: ltm:nominal,asm:nominal",
    "Type": "String"
   },
- "bigIqAddress": {
-   "ConstraintDescription": "Verify the private IP address of the BIG-IQ device that contains the pool of licenses",
-   "Description": "Private IP address of the BIG-IQ device that contains the pool of BIG-IP licenses",
-   "MaxLength": "255",
-   "MinLength": "1",
-   "Type": "String"
-  },
-  "bigIqLicensePoolName": {
-   "ConstraintDescription": "Verify the Name of BIG-IQ License Pool",
-   "Description": "Name of the pool on BIG-IQ that contains the BIG-IP licenses",
-   "MaxLength": "255",
-   "MinLength": "1",
-   "Type": "String"
-  },
-  "bigIqLicenseSkuKeyword1": {
-   "ConstraintDescription": "Verify the BIG-IQ license filter to use for sku keyword 1",
-   "Default": "OPTIONAL",
-   "Description": "The BIG-IQ license filter (based on SKU keyword) you want to use for licensing the BIG-IPs from the BIG-IQ, for example LTM, BR, BT, ASM or LTMASM. Note: This is only required when licensing with an ELA/subscription (utility) pool on the BIG-IQ, if not using this pool type leave the default of OPTIONAL.",
-   "MaxLength": "255",
-   "MinLength": "1",
-   "Type": "String"
-  },
-  "bigIqLicenseSkuKeyword2": {
-   "ConstraintDescription": "Verify the BIG-IQ license filter to use for sku keyword 2",
-   "Default": "OPTIONAL",
-   "Description": "The BIG-IQ license filter (based on SKU keyword) you want to use for licensing the BIG-IPs from the BIG-IQ, for example LTM, BR, BT, ASM or LTMASM. Note: This is only required when licensing with an ELA/subscription (utility) pool on the BIG-IQ, if not using this pool type leave the default of OPTIONAL.",
-   "MaxLength": "255",
-   "MinLength": "1",
-   "Type": "String"
-  },
-  "bigIqLicenseTenant": {
-   "ConstraintDescription": "Verify the BIGIQ Licenses tenant value",
-   "Default": "OPTIONAL",
-   "Description": "The BIG-IQ license tenant to use during BIG-IP licensing via BIG-IQ. Note: This is only required when licensing with an ELA/subscription (utility) pool on the BIG-IQ, if not using this pool type leave the default of OPTIONAL.",
-   "MaxLength": "255",
-   "MinLength": "1",
-   "Type": "String"
-  },
-  "bigIqLicenseUnitOfMeasure": {
-   "ConstraintDescription": "Verify the BIG-IQ License Unit Of Measure",
-   "Default": "OPTIONAL",
-   "Description": "The BIG-IQ license unit of measure to use during BIG-IP licensing via BIG-IQ, for example yearly, monthly, daily or hourly. Note: This is only required when licensing with an ELA/subscription (utility) pool on the BIG-IQ, if not using this pool type leave the default of OPTIONAL.",
-   "MaxLength": "255",
-   "MinLength": "1",
-   "Type": "String"
-  },
-  "bigIqPasswordS3Arn": {
-   "ConstraintDescription": "Verify the S3 ARN of BIG-IQ Password file",
-   "Description": "S3 ARN of the BIG-IQ Password file. e.g. arn:aws:s3:::bucket_name/full_path_to_file for public regions. For GovCloud (US) region, start with arn:aws-us-gov:s3. For China region, start with arn:aws-cn:s3.",
-   "MaxLength": "255",
-   "MinLength": "1",
-   "Type": "String"
-  },
-  "bigIqUsername": {
-   "ConstraintDescription": "Verify the BIG-IQ user with privileges to license BIG-IP. Can be Admin, Device Manager, or Licensing Manager",
-   "Description": "BIG-IQ user with privileges to license BIG-IP. Must be 'Admin', 'Device Manager', or 'Licensing Manager'",
-   "MaxLength": "255",
-   "MinLength": "1",
-   "Type": "String"
-  },
   "costcenter": {
    "Default": "f5costcenter",
    "Description": "Name of the Cost Center Tag",
@@ -1090,12 +1004,28 @@
   },
   "imageName": {
    "AllowedValues": [
-    "AllTwoBootLocations",
-    "LTMTwoBootLocations"
+    "Good25Mbps",
+    "Good200Mbps",
+    "Good1000Mbps",
+    "Good5000Mbps",
+    "Good10000Mbps",
+    "Good16vCPU",
+    "Better25Mbps",
+    "Better200Mbps",
+    "Better1000Mbps",
+    "Better5000Mbps",
+    "Better10000Mbps",
+    "Best25Mbps",
+    "Best200Mbps",
+    "Best1000Mbps",
+    "Best5000Mbps",
+    "Best10000Mbps",
+    "AdvancedWaf25Mbps",
+    "AdvancedWaf200Mbps"
    ],
    "ConstraintDescription": "Must be a valid F5 BIG-IP VE image type",
-   "Default": "AllTwoBootLocations",
-   "Description": "Image names starting with All have all BIG-IP modules available. Image names starting with LTM have only the LTM module available.  Use Two Boot Locations if you expect to upgrade the BIG-IP VE in the future (the Two Boot Location options are only applicable to BIG-IP v13.1.1 or later).",
+   "Default": "Best1000Mbps",
+   "Description": "F5 BIG-IP Performance Type",
    "Type": "String"
   },
   "instanceType": {
@@ -1309,7 +1239,7 @@
            "--vlan name:external,nic:1.1 ",
            "--default-gw ${GATEWAY} ",
            "--mgmt-route name:dns_route,gw:${MGMT_GATEWAY},network:${NAME_SERVER}/32 ",
-           "--mgmt-route name:bigiq,gw:${MGMT_GATEWAY},network:10.0.1.0/24 ",
+           "--mgmt-route name:bigiq,gw:${MGMT_GATEWAY},network:1.1.1.1/32 ",
            "--self-ip name:external-self,address:",
            {
             "Fn::GetAtt": [
@@ -1382,72 +1312,7 @@
              {
               "Ref": "bigIpModules"
              },
-             "--license-pool --cloud aws",
-             "--big-iq-host",
-             {
-              "Ref": "bigIqAddress"
-             },
-             "--big-iq-user",
-             {
-              "Ref": "bigIqUsername"
-             },
-             "--license-pool-name",
-             {
-              "Ref": "bigIqLicensePoolName"
-             },
-             "--big-iq-password-uri",
-             {
-              "Ref": "bigIqPasswordS3Arn"
-             },
-             "--tenant ",
-             {
-              "Fn::If": [
-               "noTenant",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseTenant"
-               }
-              ]
-             },
-             "--unit-of-measure",
-             {
-              "Fn::If": [
-               "noUnitOfMeasure",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseUnitOfMeasure"
-               }
-              ]
-             },
-             "--sku-keyword-1",
-             {
-              "Fn::If": [
-               "noSkuKeyword1",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseSkuKeyword1"
-               }
-              ]
-             },
-             "--sku-keyword-2",
-             {
-              "Fn::If": [
-               "noSkuKeyword2",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseSkuKeyword2"
-               }
-              ]
-             },
-             "--metrics \"cloudName:aws,region:${REGION},bigIpVersion:16.1.0-0.0.19,customerId:${CUSTOMERID},deploymentId:${DEPLOYMENTID},templateName:f5-existing-stack-across-az-cluster-bigiq-3nic-bigip.template,templateVersion:5.14.0,licenseType:bigiq\"",
+             "--metrics \"cloudName:aws,region:${REGION},bigIpVersion:16.1.0-0.0.19,customerId:${CUSTOMERID},deploymentId:${DEPLOYMENTID},templateName:f5-existing-stack-across-az-cluster-payg-3nic-bigip.template,templateVersion:5.14.0,licenseType:hourly\"",
              "-d tm.tcpudptxchecksum:software-only ",
              "&>> /var/log/cloud/aws/install.log < /dev/null &"
             ]
@@ -1482,71 +1347,6 @@
              "--modules ",
              {
               "Ref": "bigIpModules"
-             },
-                          "--license-pool --cloud aws",
-             "--big-iq-host",
-             {
-              "Ref": "bigIqAddress"
-             },
-             "--big-iq-user",
-             {
-              "Ref": "bigIqUsername"
-             },
-             "--license-pool-name",
-             {
-              "Ref": "bigIqLicensePoolName"
-             },
-             "--big-iq-password-uri",
-             {
-              "Ref": "bigIqPasswordS3Arn"
-             },
-             "--tenant ",
-             {
-              "Fn::If": [
-               "noTenant",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseTenant"
-               }
-              ]
-             },
-             "--unit-of-measure",
-             {
-              "Fn::If": [
-               "noUnitOfMeasure",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseUnitOfMeasure"
-               }
-              ]
-             },
-             "--sku-keyword-1",
-             {
-              "Fn::If": [
-               "noSkuKeyword1",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseSkuKeyword1"
-               }
-              ]
-             },
-             "--sku-keyword-2",
-             {
-              "Fn::If": [
-               "noSkuKeyword2",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseSkuKeyword2"
-               }
-              ]
              },
              "-d tm.tcpudptxchecksum:software-only ",
              "&>> /var/log/cloud/aws/install.log < /dev/null &"
@@ -2489,7 +2289,7 @@
            "--vlan name:external,nic:1.1 ",
            "--default-gw ${GATEWAY} ",
            "--mgmt-route name:dns_route,gw:${MGMT_GATEWAY},network:${NAME_SERVER}/32 ",
-           "--mgmt-route name:bigiq,gw:${MGMT_GATEWAY},network:10.0.1.0/24 ",
+           "--mgmt-route name:bigiq,gw:${MGMT_GATEWAY},network:1.1.1.1/32 ",
            "--self-ip name:external-self,address:",
            {
             "Fn::GetAtt": [
@@ -2562,72 +2362,7 @@
              {
               "Ref": "bigIpModules"
              },
-             "--license-pool --cloud aws",
-             "--big-iq-host",
-             {
-              "Ref": "bigIqAddress"
-             },
-             "--big-iq-user",
-             {
-              "Ref": "bigIqUsername"
-             },
-             "--license-pool-name",
-             {
-              "Ref": "bigIqLicensePoolName"
-             },
-             "--big-iq-password-uri",
-             {
-              "Ref": "bigIqPasswordS3Arn"
-             },
-             "--tenant ",
-             {
-              "Fn::If": [
-               "noTenant",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseTenant"
-               }
-              ]
-             },
-             "--unit-of-measure",
-             {
-              "Fn::If": [
-               "noUnitOfMeasure",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseUnitOfMeasure"
-               }
-              ]
-             },
-             "--sku-keyword-1",
-             {
-              "Fn::If": [
-               "noSkuKeyword1",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseSkuKeyword1"
-               }
-              ]
-             },
-             "--sku-keyword-2",
-             {
-              "Fn::If": [
-               "noSkuKeyword2",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseSkuKeyword2"
-               }
-              ]
-             },
-             "--metrics \"cloudName:aws,region:${REGION},bigIpVersion:16.1.0-0.0.19,customerId:${CUSTOMERID},deploymentId:${DEPLOYMENTID},templateName:f5-existing-stack-across-az-cluster-bigiq-3nic-bigip.template,templateVersion:5.14.0,licenseType:bigiq\"",
+             "--metrics \"cloudName:aws,region:${REGION},bigIpVersion:16.1.0-0.0.19,customerId:${CUSTOMERID},deploymentId:${DEPLOYMENTID},templateName:f5-existing-stack-across-az-cluster-payg-3nic-bigip.template,templateVersion:5.14.0,licenseType:hourly\"",
              "-d tm.tcpudptxchecksum:software-only ",
              "&>> /var/log/cloud/aws/install.log < /dev/null &"
             ]
@@ -2662,71 +2397,6 @@
              "--modules ",
              {
               "Ref": "bigIpModules"
-             },
-             "--license-pool --cloud aws",
-             "--big-iq-host",
-             {
-              "Ref": "bigIqAddress"
-             },
-             "--big-iq-user",
-             {
-              "Ref": "bigIqUsername"
-             },
-             "--license-pool-name",
-             {
-              "Ref": "bigIqLicensePoolName"
-             },
-             "--big-iq-password-uri",
-             {
-              "Ref": "bigIqPasswordS3Arn"
-             },
-             "--tenant ",
-             {
-              "Fn::If": [
-               "noTenant",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseTenant"
-               }
-              ]
-             },
-             "--unit-of-measure",
-             {
-              "Fn::If": [
-               "noUnitOfMeasure",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseUnitOfMeasure"
-               }
-              ]
-             },
-             "--sku-keyword-1",
-             {
-              "Fn::If": [
-               "noSkuKeyword1",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseSkuKeyword1"
-               }
-              ]
-             },
-             "--sku-keyword-2",
-             {
-              "Fn::If": [
-               "noSkuKeyword2",
-               {
-                "Ref": "AWS::NoValue"
-               },
-               {
-                "Ref": "bigIqLicenseSkuKeyword2"
-               }
-              ]
              },
              "-d tm.tcpudptxchecksum:software-only ",
              "&>> /var/log/cloud/aws/install.log < /dev/null &"
@@ -3396,7 +3066,7 @@
     "PrivateIpAddresses" : [
      { "PrivateIpAddress" : "172.16.102.100", "Primary" : "true" },
      { "PrivateIpAddress" : "172.16.102.200", "Primary" : "false" },
-     { "PrivateIpAddress" : "172.16.102.201", "Primary" : "false" }
+     { "PrivateIpAddress" : "172.16.102.201", "Primary" : "false" },
     ],
     "SubnetId": {
      "Ref": "subnet1Az2"
@@ -3696,28 +3366,6 @@
    },
    "Type": "AWS::EC2::SecurityGroup"
   },
-    "bigipSecurityGroupIngressBigiqLic": {
-   "Properties": {
-    "CidrIp": {
-     "Fn::Join": [
-      "",
-      [
-       {
-        "Ref": "bigIqAddress"
-       },
-       "/32"
-      ]
-     ]
-    },
-    "FromPort": 443,
-    "GroupId": {
-     "Ref": "bigipManagementSecurityGroup"
-    },
-    "IpProtocol": "tcp",
-    "ToPort": 443
-   },
-   "Type": "AWS::EC2::SecurityGroupIngress"
-  },
   "bigipSecurityGroupIngressConfigSync": {
    "Properties": {
     "FromPort": 4353,
@@ -3806,15 +3454,6 @@
         },
         {
          "Action": [
-          "s3:GetObject"
-         ],
-         "Effect": "Allow",
-         "Resource": {
-          "Ref": "bigIqPasswordS3Arn"
-         }
-        },
-        {
-         "Action": [
           "s3:ListBucket",
           "s3:GetBucketTagging"
          ],
@@ -3851,7 +3490,24 @@
           ]
          }
         },
- 
+        # {
+        #  "Action": [
+        #   "s3:ListBucket"
+        #  ],
+        #  "Effect": "Allow",
+        #  "Resource": [
+        #     "arn:aws:s3:::wardbopp-s3/*"
+        #   ]
+        #  },
+        # {
+        #  "Action": [
+        #   "s3:GetObject"
+        #  ],
+        #  "Effect": "Allow",
+        #  "Resource": [
+        #     "arn:aws:s3:::wardbopp-s3/*"
+        #   ]
+        #  },       
         {
          "Action": [
           "ec2:CreateRoute",
@@ -3895,5 +3551,5 @@
    },
    "Type": "AWS::IAM::InstanceProfile"
   }
-  }
+ }
 }
