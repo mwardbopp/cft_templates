@@ -3472,7 +3472,11 @@
                         "Sid": "Access-to-specific-VPCE-only",
                         "Effect": "Allow",
                         "Principal": "*",
-                        "Action": "s3:GetObject",
+                        "Action": [
+                            "s3:GetObject",
+                            "s3:PutObject",
+                            "s3:DeleteObject"
+                        ],
                         "Resource": {
                             "Fn::Join": [
                                 "",
