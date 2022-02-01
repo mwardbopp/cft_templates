@@ -3797,6 +3797,8 @@
           "ec2:DescribeNetworkInterfaces",
           "ec2:DescribeNetworkInterfaceAttribute",
           "ec2:DescribeRouteTables",
+          "ec2:DescribeSubnets",
+          "ec2:AssignPrivateIpAddresses",
           "ec2:ReplaceRoute",
           "ec2:assignprivateipaddresses",
           "sts:AssumeRole",
@@ -3820,6 +3822,7 @@
         {
          "Action": [
           "s3:ListBucket",
+          "s3:GetBucketLocation",
           "s3:GetBucketTagging"
          ],
          "Effect": "Allow",
