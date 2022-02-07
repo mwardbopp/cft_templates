@@ -5,25 +5,42 @@
     "label": "my BIG-IP declaration for declarative onboarding",
     "Common": {
         "class": "Tenant",
-        "hostname": "{{{ HOST_NAME }}}",
-        "myDns": {
-            "class": "DNS",
-            "nameServers": [
-                "8.8.8.8"
+        "hostname": "test.local",
+        "internal": {
+            "class": "VLAN",
+            "tag": 4093,
+            "mtu": 1500,
+            "interfaces": [
+                {
+                    "name": "1.2",
+                    "tagged": true
+                }
             ]
         },
-        "myNtp": {
-            "class": "NTP",
-            "servers": [
-                "0.pool.ntp.org"
-            ],
-            "timezone": "UTC"
+        "internal-self": {
+            "class": "SelfIp",
+            "address": "172.16.3.50/24",
+            "vlan": "internal",
+            "allowService": "default",
+            "trafficGroup": "traffic-group-local-only"
         },
-        "admin": {
-            "class": "User",
-            "userType": "regular",
-            "password": "{{{ ADMIN_PASS }}}",
-            "shell": "bash"
+        "external": {
+            "class": "VLAN",
+            "tag": 4094,
+            "mtu": 1500,
+            "interfaces": [
+                {
+                    "name": "1.1",
+                    "tagged": true
+                }
+            ]
+        },
+        "external-self": {
+            "class": "SelfIp",
+            "address": "172.16.2.50/24",
+            "vlan": "external",
+            "allowService": "none",
+            "trafficGroup": "traffic-group-local-only"
         }
     }
 }
