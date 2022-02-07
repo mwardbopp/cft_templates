@@ -50,7 +50,15 @@ runtime_parameters:
       environment: aws
       field: subnet-ipv4-cidr-block
       index: 1
-bigip_ready_enabled: []
+bigip_ready_enabled:
+  - name: provision_asm_module
+    type: inline
+    commands:
+      - tmsh modify sys provision asm level nominal
+  - name: save_sys_config
+    type: inline
+    commands:
+      - tmsh save sys config
 extension_packages:
   install_operations:
     - extensionType: do
