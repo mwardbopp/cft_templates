@@ -6,7 +6,7 @@ Resources:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
       TemplateURL: >-
-        https://raw.githubusercontent.com/mwardbopp/cft_templates/main/CSTv2/standalone-bigip.yaml
+        https://raw.githubusercontent.com/F5Networks/f5-aws-cloudformation-v2/v1.1.0.0/examples/modules/bigip-standalone/bigip-standalone.yaml
       Parameters:
         bigIpInstanceProfile: 'arn:aws:iam::498142139943:instance-profile/mwb-pipeline-cft-3nic-bigipServiceDiscoveryProfile-N5T8KDHQMBDC'
         bigIpRuntimeInitConfig: 'https://raw.githubusercontent.com/mwardbopp/cft_templates/main/CSTv2/runtime-init-1.yaml'
