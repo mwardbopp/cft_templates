@@ -6,38 +6,38 @@ Resources:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
       TemplateURL: >-
-        https://raw.githubusercontent.com/F5Networks/f5-aws-cloudformation-v2/v1.1.0.0/examples/modules/bigip-standalone/bigip-standalone.yaml
+        https://mwb-public.s3.eu-west-1.amazonaws.com/bigip-standalone.yaml
       Parameters:
-        bigIpInstanceProfile: 'arn:aws:iam::498142139943:instance-profile/mwb-pipeline-cft-3nic-bigipServiceDiscoveryProfile-N5T8KDHQMBDC'
+        bigIpInstanceProfile: 'mwb-pipeline-cft-3nic-bigipServiceDiscoveryProfile-N5T8KDHQMBDC'
         bigIpRuntimeInitConfig: 'https://raw.githubusercontent.com/mwardbopp/cft_templates/main/CSTv2/runtime-init-1.yaml'
         bigIpRuntimeInitPackageUrl: 'https://cdn.f5.com/product/cloudsolutions/f5-bigip-runtime-init/v1.3.2/dist/f5-bigip-runtime-init-1.3.2-1.gz.run'
-        customImageId: ami-id
         externalPrimaryPublicId: ''
         externalPublicIpIds: ''
         externalSecurityGroupId: sg-01d8810a1bd98ac2e
-        externalSelfIp: '172.16.2.50/24'
-        externalServiceIps: '172.16.2.51/24'
+        externalSelfIp: '172.16.2.50'
+        externalServiceIps: '172.16.2.51'
         externalSubnetId: subnet-0420aa08bdce8ab69
-        imageId: ami-0407cd5667b54e56e
+        # imageId: ami-0407cd5667b54e56e
+        imageId: ami-0a63e05cbe0c38003
         instanceType: m5.xlarge
         internalSecurityGroupId: sg-006a33a22e231abdf
-        internalSelfIp: '172.16.3.50/24'
+        internalSelfIp: '172.16.3.50'
         internalSubnetId: subnet-0da81c7cf75177937
         mgmtPublicIpId: eipalloc-0670791c76631c968
         mgmtSecurityGroupId: sg-0ac3adb30b81eee5c
-        mgmtSelfIp: '172.16.1.50/24'
+        mgmtSelfIp: '172.16.1.50'
         mgmtSubnetId: subnet-0eff71c70346a5103
         numSecondaryPrivateIpAddress: 0
         sshKey: wardbopp-keypair
-        uniqueString: mwb-cstv2
-Outputs:
-  stackName:
-    Value: !GetAtt 'BigIp.Outputs.stackName'
-  bigIpInstanceId:
-    Value: !GetAtt 'BigIp.Outputs.bigIpInstanceId'
-  bigIp2nicExternalInterfacePrivateIp:
-    Value: !GetAtt 'BigIp.Outputs.bigIp2nicExternalInterfacePrivateIp'
-  bigIp3NicExternalInterfacePrivateIp:
-    Value: !GetAtt 'BigIp.Outputs.bigIp3NicExternalInterfacePrivateIp'
-  bigIp3NicInternalInterfacePrivateIp:
-    Value: !GetAtt 'BigIp.Outputs.bigIp3NicInternalInterfacePrivateIp'
+        uniqueString: mwbcst
+# Outputs:
+  # stackName:
+  #   Value: !GetAtt 'BigIp.Outputs.stackName'
+  # bigIpInstanceId:
+  #   Value: !GetAtt 'BigIp.Outputs.bigIpInstanceId'
+  # bigIp2nicExternalInterfacePrivateIp:
+  #   Value: !GetAtt 'BigIp.Outputs.bigIp2nicExternalInterfacePrivateIp'
+  # bigIp3NicExternalInterfacePrivateIp:
+  #   Value: !GetAtt 'BigIp.Outputs.bigIp3NicExternalInterfacePrivateIp'
+  # bigIp3NicInternalInterfacePrivateIp:
+  #   Value: !GetAtt 'BigIp.Outputs.bigIp3NicInternalInterfacePrivateIp'
