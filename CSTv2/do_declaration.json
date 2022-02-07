@@ -24,12 +24,6 @@
             "userType": "regular",
             "password": "{{{ ADMIN_PASS }}}",
             "shell": "bash"
-        },
-        "root": {
-            "class": "User",
-            "userType": "root",
-            "oldPassword": "default",
-            "newPassword": "{{{ ROOT_PASS }}}"
         }
     }
 }
