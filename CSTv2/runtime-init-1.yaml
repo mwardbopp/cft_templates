@@ -74,11 +74,14 @@ extension_services:
       type: inline
       value: 
         schemaVersion: 1.0.0
-        class: User
+        class: Device
         async: true
         label: my 1st declaration for DO
-        admin: 
+        Common:
+          class: Tenant
+          hostname: '{{ HOST_NAME }}.local'
+          admin:
             class: User
             userType: regular
-            password: "{{{ ADMIN_PASS }}}"
+            password: '{{ ADMIN_PASS }}'
             shell: bash
