@@ -71,5 +71,14 @@ post_onboard_enabled: []
 extension_services:
   service_operations:
     - extensionType: do
-      type: url
-      value: https://raw.githubusercontent.com/mwardbopp/cft_templates/main/CSTv2/do_declaration.json
+      type: inline
+      value: 
+        schemaVersion: 1.0.0
+        class: User
+        async: true
+        label: my 1st declaration for DO
+        admin: 
+            class: User
+            userType: regular
+            password: "{{{ ADMIN_PASS }}}"
+            shell: bash
