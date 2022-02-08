@@ -299,7 +299,7 @@ Outputs:
     Value: !Ref "AWS::StackName"
   bigIpInstanceId:
     Description: BIG-IP instance id
-    Value: - !Ref 'Bigip3NicInstance1'
+    Value: !Ref 'Bigip3NicInstance1'
   bigIpManagementInterfacePrivateIp:
     Description: Internally routable IP of BIG-IP instance NIC eth0
     Value: !If
