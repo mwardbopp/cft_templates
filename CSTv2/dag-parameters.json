@@ -65,11 +65,11 @@
   },
   {
     "ParameterKey": "restrictedSrcAddressMgmt",
-    "ParameterValue": ""
+    "ParameterValue": "37.228.202.168/32"
   },
   {
     "ParameterKey": "restrictedSrcPort",
-    "ParameterValue": ""
+    "ParameterValue": "443"
   },
   {
     "ParameterKey": "uniqueString",
