@@ -21,11 +21,11 @@
   },
   {
     "ParameterKey": "externalSubnetAz1",
-    "ParameterValue": "subnet-0420aa08bdce8ab69"
+    "ParameterValue": ""
   },
   {
     "ParameterKey": "externalSubnetAz2",
-    "ParameterValue": "subnet-0ab430989103f3ba7"
+    "ParameterValue": ""
   },
   {
     "ParameterKey": "group",
@@ -33,11 +33,11 @@
   },
   {
     "ParameterKey": "internalSubnetAz1",
-    "ParameterValue": ""
+    "ParameterValue": "subnet-0420aa08bdce8ab69"
   },
   {
     "ParameterKey": "internalSubnetAz2",
-    "ParameterValue": ""
+    "ParameterValue": "subnet-0ab430989103f3ba7"
   },
   {
     "ParameterKey": "numberPublicExternalIpAddresses",
@@ -61,7 +61,7 @@
   },
   {
     "ParameterKey": "restrictedSrcAddressApp",
-    "ParameterValue": ""
+    "ParameterValue": "37.228.202.168/32"
   },
   {
     "ParameterKey": "restrictedSrcAddressMgmt",
