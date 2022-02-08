@@ -299,13 +299,7 @@ Outputs:
     Value: !Ref "AWS::StackName"
   bigIpInstanceId:
     Description: BIG-IP instance id
-    Value: !If
-      - is1Nic
-      - !Ref 'Bigip1NicInstance'
-      - !If
-        - is2Nic
-        - !Ref 'Bigip2NicInstance'
-        - !If
+    Value: 
           - is3Nic
           - !Ref 'Bigip3NicInstance1'
           - !Ref 'AWS::NoValue'
