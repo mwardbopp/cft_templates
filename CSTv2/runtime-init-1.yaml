@@ -22,13 +22,13 @@ runtime_parameters:
       environment: aws
       version: AWSCURRENT
       secretId: bigip-admin-pwd
-  - name: ROOT_PASS
+  - name: BIGIQ_LIC_PASS
     type: secret
     secretProvider:
       type: SecretManager
       environment: aws
       version: AWSCURRENT
-      secretId: bigip-admin-pwd   
+      secretId: bigiq-lic-pwd   
   - name: SELF_IP_EXTERNAL
     type: metadata
     metadataProvider:
@@ -85,3 +85,12 @@ extension_services:
             userType: regular
             password: '{{ ADMIN_PASS }}'
             shell: bash
+          myLicense:
+            class: License
+            licenseType: licensePool
+            bigIqHost: 10.0.1.6
+            bigIqUsername: licensemgr
+            bigIqPassword: '{{ BIGIQ_LIC_PASS }}'
+            licensePool: aws
+            bigIpUsername: admin
+            bigIpPassword: '{{ ADMIN_PASS }}'

@@ -5,7 +5,7 @@
     "label": "my BIG-IP declaration for declarative onboarding",
     "Common": {
         "class": "Tenant",
-        "hostname": "test.local",
+        "hostname": "ip-172-16-1-50.eu-west-1.compute.internal.local",
         "internal": {
             "class": "VLAN",
             "tag": 4093,
@@ -41,6 +41,11 @@
             "vlan": "external",
             "allowService": "none",
             "trafficGroup": "traffic-group-local-only"
+        },
+        "bigiq_route": {
+            "class": "ManagementRoute",
+            "network": "10.0.1.0/24",
+            "gw": "172.16.1.1"
         }
     }
 }
