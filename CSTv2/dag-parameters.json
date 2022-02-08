@@ -1,0 +1,86 @@
+[
+  {
+    "ParameterKey": "application",
+    "ParameterValue": "f5app"
+  },
+  {
+    "ParameterKey": "cost",
+    "ParameterValue": "f5cost"
+  },
+  {
+    "ParameterKey": "createAppSecurityGroup",
+    "ParameterValue": "false"
+  },
+  {
+    "ParameterKey": "createFailoverIngress",
+    "ParameterValue": "false"
+  },
+  {
+    "ParameterKey": "environment",
+    "ParameterValue": "f5env"
+  },
+  {
+    "ParameterKey": "externalSubnetAz1",
+    "ParameterValue": "subnet-0420aa08bdce8ab69"
+  },
+  {
+    "ParameterKey": "externalSubnetAz2",
+    "ParameterValue": "subnet-0ab430989103f3ba7"
+  },
+  {
+    "ParameterKey": "group",
+    "ParameterValue": "f5group"
+  },
+  {
+    "ParameterKey": "internalSubnetAz1",
+    "ParameterValue": ""
+  },
+  {
+    "ParameterKey": "internalSubnetAz2",
+    "ParameterValue": ""
+  },
+  {
+    "ParameterKey": "numberPublicExternalIpAddresses",
+    "ParameterValue": 0
+  },
+  {
+    "ParameterKey": "numberPublicMgmtIpAddresses",
+    "ParameterValue": 0
+  },
+  {
+    "ParameterKey": "owner",
+    "ParameterValue": "f5owner"
+  },
+  {
+    "ParameterKey": "provisionExternalBigipLoadBalancer",
+    "ParameterValue": "false"
+  },
+  {
+    "ParameterKey": "provisionInternalBigipLoadBalancer",
+    "ParameterValue": "true"
+  },
+  {
+    "ParameterKey": "restrictedSrcAddressApp",
+    "ParameterValue": ""
+  },
+  {
+    "ParameterKey": "restrictedSrcAddressMgmt",
+    "ParameterValue": ""
+  },
+  {
+    "ParameterKey": "restrictedSrcPort",
+    "ParameterValue": ""
+  },
+  {
+    "ParameterKey": "uniqueString",
+    "ParameterValue": "mwbilb"
+  },
+  {
+    "ParameterKey": "vpcCidr",
+    "ParameterValue": "172.16.0.0/16"
+  },
+  {
+    "ParameterKey": "vpc",
+    "ParameterValue": "vpc-0101d41e7b5e8e421"
+  }
+]
