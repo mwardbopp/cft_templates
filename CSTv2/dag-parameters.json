@@ -1,86 +1,25 @@
-[
-  {
-    "ParameterKey": "application",
-    "ParameterValue": "f5app"
-  },
-  {
-    "ParameterKey": "cost",
-    "ParameterValue": "f5cost"
-  },
-  {
-    "ParameterKey": "createAppSecurityGroup",
-    "ParameterValue": "false"
-  },
-  {
-    "ParameterKey": "createFailoverIngress",
-    "ParameterValue": "false"
-  },
-  {
-    "ParameterKey": "environment",
-    "ParameterValue": "f5env"
-  },
-  {
-    "ParameterKey": "externalSubnetAz1",
-    "ParameterValue": ""
-  },
-  {
-    "ParameterKey": "externalSubnetAz2",
-    "ParameterValue": ""
-  },
-  {
-    "ParameterKey": "group",
-    "ParameterValue": "f5group"
-  },
-  {
-    "ParameterKey": "internalSubnetAz1",
-    "ParameterValue": "subnet-0420aa08bdce8ab69"
-  },
-  {
-    "ParameterKey": "internalSubnetAz2",
-    "ParameterValue": "subnet-0ab430989103f3ba7"
-  },
-  {
-    "ParameterKey": "numberPublicExternalIpAddresses",
-    "ParameterValue": 0
-  },
-  {
-    "ParameterKey": "numberPublicMgmtIpAddresses",
-    "ParameterValue": 0
-  },
-  {
-    "ParameterKey": "owner",
-    "ParameterValue": "f5owner"
-  },
-  {
-    "ParameterKey": "provisionExternalBigipLoadBalancer",
-    "ParameterValue": "false"
-  },
-  {
-    "ParameterKey": "provisionInternalBigipLoadBalancer",
-    "ParameterValue": "true"
-  },
-  {
-    "ParameterKey": "restrictedSrcAddressApp",
-    "ParameterValue": "37.228.202.168/32"
-  },
-  {
-    "ParameterKey": "restrictedSrcAddressMgmt",
-    "ParameterValue": "37.228.202.168/32"
-  },
-  {
-    "ParameterKey": "restrictedSrcPort",
-    "ParameterValue": "443"
-  },
-  {
-    "ParameterKey": "uniqueString",
-    "ParameterValue": "mwbilb"
-  },
-  {
-    "ParameterKey": "vpcCidr",
-    "ParameterValue": "172.16.0.0/16"
-  },
-  {
-    "ParameterKey": "vpc",
-    "ParameterValue": "vpc-0101d41e7b5e8e421"
-  }
-]
+{        "Parameters" :  
+    {
+     "application" : "f5app",
+     "cost" : "f5cost",
+     "createAppSecurityGroup" : "false",
+     "createFailoverIngress" : "false",
+     "environment" : "f5env",
+     "externalSubnetAz1" : "",
+     "externalSubnetAz2" : "",
+     "group" : "f5group",
+     "internalSubnetAz1" : "subnet-0420aa08bdce8ab69",
+     "internalSubnetAz2" : "subnet-0ab430989103f3ba7",
+     "numberPublicExternalIpAddresses" : 0,
+     "numberPublicMgmtIpAddresses" : 0,
+     "owner" : "f5owner",
+     "provisionExternalBigipLoadBalancer" : "false",
+     "provisionInternalBigipLoadBalancer" : "true",
+     "restrictedSrcAddressApp" : "37.228.202.168/32",
+     "restrictedSrcAddressMgmt" : "37.228.202.168/32",
+     "restrictedSrcPort" : "443",
+     "uniqueString" : "mwbilb",
+     "vpcCidr" : "172.16.0.0/16",
+     "vpc" : "vpc-0101d41e7b5e8e421"
+    }
+}
