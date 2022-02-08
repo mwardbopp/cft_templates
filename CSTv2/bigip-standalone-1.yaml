@@ -300,7 +300,6 @@ Outputs:
   bigIpInstanceId:
     Description: BIG-IP instance id
     Value: 
-          - is3Nic
           - !Ref 'Bigip3NicInstance1'
           - !Ref 'AWS::NoValue'
   bigIpManagementInterfacePrivateIp:
