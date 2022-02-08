@@ -898,7 +898,7 @@ Resources:
             - |
               # Run
             - |
-              bash "/var/config/rest/downloads/${PACKAGE_URL##*/}" -- '--cloud aws'
+              bash "/var/config/rest/downloads/${PACKAGE_URL##*/}" -- '--cloud aws --key https://wardbopp-s3.s3.eu-west-1.amazonaws.com/gpg.key --skip-toolchain-metadata-sync'
             - |2+
 
             - |
