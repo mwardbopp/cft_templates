@@ -1,0 +1,11 @@
+{        "Parameters" :  
+    {
+    "bigIqSecretArn" : "arn:aws:secretsmanager:eu-west-1:498142139943:secret:bigiq-lic-pwd-RW2KUB",
+    "createAmiRole" : "true",
+    "createBigIqRoles" : "true",
+    "s3Bucket" : "wardbopp-s3",
+    "secretArn" : "arn:aws:secretsmanager:eu-west-1:498142139943:secret:bigip-admin-pwd-qxe7nz",
+    "solutionType" : "secret",
+    "uniqueString" : "myUniqStr"
+    }
+}
