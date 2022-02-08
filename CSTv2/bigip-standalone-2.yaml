@@ -307,7 +307,7 @@ Outputs:
         - !Ref 'Bigip2NicInstance'
         - !If
           - is3Nic
-          - !Ref 'Bigip3NicInstance2'
+          - !Ref 'Bigip3NicInstance'
           - !Ref 'AWS::NoValue'
   bigIpManagementInterfacePrivateIp:
     Description: Internally routable IP of BIG-IP instance NIC eth0
