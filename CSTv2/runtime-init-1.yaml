@@ -79,7 +79,7 @@ extension_services:
         label: my 1st declaration for DO
         Common:
           class: Tenant
-          hostname: '{{ HOST_NAME }}.local'
+          hostname: '{{ HOST_NAME }}'
           admin:
             class: User
             userType: regular
