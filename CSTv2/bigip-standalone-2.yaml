@@ -770,6 +770,8 @@ Resources:
         - DeviceName: /dev/xvda
           Ebs:
             DeleteOnTermination: true
+            KmsKeyId : '8878f20a-35cf-4926-8164-e61813ad49e7'
+            Encrypted : true
             VolumeSize: 100
             VolumeType: gp2
         - DeviceName: /dev/xvdb
