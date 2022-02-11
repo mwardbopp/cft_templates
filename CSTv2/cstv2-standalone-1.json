@@ -6,7 +6,7 @@
             "externalSelfIp" :  "172.16.2.50",
             "externalServiceIps" :  "172.16.2.51",
             "externalSubnetId" :  "subnet-0420aa08bdce8ab69",
-            "imageId" :  "ami-0407cd5667b54e56e",
+            "imageId" :  "ami-0fb9a63625fb791a0",
             "instanceType" :  "m5.xlarge",
             "internalSecurityGroupId" :  "sg-03e6b56f497ce25f4",
             "internalSelfIp" :  "172.16.3.50",
