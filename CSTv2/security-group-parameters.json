@@ -1,0 +1,55 @@
+[
+  {
+    "ParameterKey": "application",
+    "ParameterValue": "f5app"
+  },
+  {
+    "ParameterKey": "cost",
+    "ParameterValue": "f5cost"
+  },
+  {
+    "ParameterKey": "createAppSecurityGroup",
+    "ParameterValue": "true"
+  },
+  {
+    "ParameterKey": "createFailoverIngress",
+    "ParameterValue": "false"
+  },
+  {
+    "ParameterKey": "environment",
+    "ParameterValue": "f5env"
+  },
+  {
+    "ParameterKey": "group",
+    "ParameterValue": "f5group"
+  },
+  {
+    "ParameterKey": "owner",
+    "ParameterValue": "f5owner"
+  },
+  {
+    "ParameterKey": "restrictedSrcAddressApp",
+    "ParameterValue": "37.228.202.168/32"
+  },
+  {
+    "ParameterKey": "restrictedSrcAddressMgmt",
+    "ParameterValue": "37.228.202.168/32"
+  },
+  {
+    "ParameterKey": "restrictedSrcPort",
+    "ParameterValue": 443
+  },
+  {
+    "ParameterKey": "uniqueString",
+    "ParameterValue": "myUniqStr"
+  },
+  {
+    "ParameterKey": "vpcCidr",
+    "ParameterValue": "172.16.0.0/16"
+  },
+  {
+    "ParameterKey": "vpc",
+    "ParameterValue": "vpc-0101d41e7b5e8e421"
+  }
+]
+© 2022 GitHub, Inc.
