@@ -1,0 +1,3 @@
+BIGIQ_HOST= 10.0.1.6
+BIGIQ_LIC_MGR= licensemgr
+BIGIQ_LIC_POOL= aws
