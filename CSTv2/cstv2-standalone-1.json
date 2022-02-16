@@ -1,6 +1,7 @@
 {        "Parameters" :  {
             "bigIpInstanceProfile" :  { "Ref" : "bigIpInstanceProfile" },
             "bigIpRuntimeInitConfig" :  "https://wardbopp-s3.s3.eu-west-1.amazonaws.com/runtime-init-1.yaml",
+            "bigIpRuntimeInitParameters" : "https://wardbopp-s3.s3.eu-west-1.amazonaws.com/runtime-parameters.json",
             "bigIpRuntimeInitPackageUrl" :  "https://wardbopp-s3.s3.eu-west-1.amazonaws.com/f5-bigip-runtime-init-1.4.0-1.gz.run",
             "externalSecurityGroupId" :  "sg-0aeb28697b8051280",
             "externalSelfIp" :  "172.16.2.50",
