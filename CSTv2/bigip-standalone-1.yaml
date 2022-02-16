@@ -881,7 +881,7 @@ Resources:
             - |
               for i in {1..30}; do
             - |2
-                  curl -fv --retry 1 --connect-timeout 5 -L "${RUNTIME_PARAMETERS}" -o "/var/config/cloud/runtime-parameters.json" && break || sleep 10
+                  curl -fv --retry 1 --connect-timeout 5 -L "${RUNTIME_PARAMETERS}" -o "/config/cloud/runtime-parameters.json" && break || sleep 10
             - |
               done
             - |2+

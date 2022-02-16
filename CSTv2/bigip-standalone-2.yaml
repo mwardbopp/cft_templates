@@ -201,6 +201,7 @@ Metadata:
         Parameters:
           - bigIpRuntimeInitConfig
           - bigIpRuntimeInitPackageUrl
+          - bigIpRuntimeInitParameters
       - Label:
           default: EC2 Instances
         Parameters:
@@ -246,6 +247,8 @@ Metadata:
         default: Runtime Init Configuration
       bigIpRuntimeInitPackageUrl:
         default: Runtime Init Package
+      bigIpRuntimeInitParameters:
+        default: Runtime Init Parameters
       cost:
         default: Cost Center
       imageId:
@@ -360,6 +363,9 @@ Parameters:
   bigIpRuntimeInitPackageUrl:
     Default: 'https://cdn.f5.com/product/cloudsolutions/f5-bigip-runtime-init/v1.3.2/dist/f5-bigip-runtime-init-1.3.2-1.gz.run'
     Description: URL for BIG-IP Runtime Init package.
+    Type: String
+  bigIpRuntimeInitParameters:
+    Description: 'REQUIRED - Supply a URL to the bigip-runtime-init parameters file'
     Type: String
   cost:
     Default: f5cost
@@ -865,6 +871,21 @@ Resources:
             - !Ref 'bigIpRuntimeInitPackageUrl'
             - |
               '
+
+            - RUNTIME_PARAMETERS='
+            - !Ref 'bigIpRuntimeInitParameters'
+            - |
+              '
+            - |
+              # Download runtime parameters
+            - |
+              for i in {1..30}; do
+            - |2
+                  curl -fv --retry 1 --connect-timeout 5 -L "${RUNTIME_PARAMETERS}" -o "/config/cloud/runtime-parameters.json" && break || sleep 10
+            - |
+              done
+            - |2+
+
             - RUNTIME_CONFIG='
             - !Ref 'bigIpRuntimeInitConfig'
             - |
