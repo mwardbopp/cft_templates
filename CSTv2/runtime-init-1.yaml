@@ -7,13 +7,13 @@ pre_onboard_enabled:
 runtime_parameters:
   - name: BIGIQ_HOST
     type: url
-    value: file://config/cloud/runtime-parameters.json
+    value: file:///config/cloud/runtime-parameters.json
   - name: BIGIQ_LIC_MGR
     type: url
-    value: file://config/cloud/runtime-parameters.json
+    value: file:///config/cloud/runtime-parameters.json
   - name: BIGIQ_LIC_POOL
     type: url
-    value: file://config/cloud/runtime-parameters.json
+    value: file:///config/cloud/runtime-parameters.json
   - name: HOST_NAME
     type: metadata
     metadataProvider:
