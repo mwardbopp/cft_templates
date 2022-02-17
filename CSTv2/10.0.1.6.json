@@ -1,4 +1,7 @@
-{ "BIGIQ_HOST" : "10.0.1.6",
-"BIGIQ_LIC_MGR" : "licensemgr",
-"BIGIQ_LIC_POOL" : "aws"
-}
+{
+    "BIGIQ_HOST": "10.0.1.6",
+    "BIGIQ_LIC_MGR": "licensemgr",
+    "BIGIQ_LIC_POOL": "aws",
+    "bigip-admin-pwd": "bigip-admin-pwd",
+    "bigiq-lic-pwd": "bigiq-lic-pwd"
+    }
