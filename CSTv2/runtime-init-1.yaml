@@ -5,15 +5,9 @@ pre_onboard_enabled:
       - /usr/bin/setdb provision.extramb 1000
       - /usr/bin/setdb restjavad.useextramb true
 runtime_parameters:
-  - name: BIGIQ_HOST
+  - name: RUNTIME_INIT_CONFIG
     type: url
-    value: file:///config/cloud/runtime-parameters.json
-  - name: BIGIQ_LIC_MGR
-    type: url
-    value: file:///config/cloud/runtime-parameters.json
-  - name: BIGIQ_LIC_POOL
-    type: url
-    value: file:///config/cloud/runtime-parameters.json
+    value: https://wardbopp-s3.s3.eu-west-1.amazonaws.com/10.0.1.6.json 
   - name: HOST_NAME
     type: metadata
     metadataProvider:
@@ -104,9 +98,9 @@ extension_services:
           myLicense:
             class: License
             licenseType: licensePool
-            bigIqHost: '{{ BIGIQ_HOST }}'
-            bigIqUsername: '{{ BIGIQ_LIC_MGR }}'
+            bigIqHost: '{{ RUNTIME_INIT_CONFIG.BIGIQ_HOST }}'
+            bigIqUsername: '{{ RUNTIME_INIT_CONFIG.BIGIQ_LIC_MGR }}'
             bigIqPassword: '{{ BIGIQ_LIC_PASS }}'
-            licensePool: '{{ BIGIQ_LIC_POOL }}'
+            licensePool: '{{ RUNTIME_INIT_CONFIG.BIGIQ_LIC_POOL }}'
             bigIpUsername: admin
             bigIpPassword: '{{ ADMIN_PASS }}'
