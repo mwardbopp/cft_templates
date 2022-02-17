@@ -4,9 +4,6 @@ pre_onboard_enabled:
     commands:
       - /usr/bin/setdb provision.extramb 1000
       - /usr/bin/setdb restjavad.useextramb true
-  - name: RUNTIME_INIT_CONFIG
-    type: url
-    value: https://wardbopp-s3.s3.eu-west-1.amazonaws.com/10.0.1.6.json 
 runtime_parameters:
   - name: RUNTIME_INIT_CONFIG
     type: url
@@ -27,14 +24,14 @@ runtime_parameters:
       type: SecretManager
       environment: aws
       version: AWSCURRENT
-      secretId: {{{ RUNTIME_INIT_CONFIG.bigip-admin-pwd }}}
+      secretId: bigip-admin-pwd
   - name: BIGIQ_LIC_PASS
     type: secret
     secretProvider:
       type: SecretManager
       environment: aws
       version: AWSCURRENT
-      secretId: {{{ RUNTIME_INIT_CONFIG.bigiq-lic-pwd }}}
+      secretId: bigiq-lic-pwd
   - name: SELF_IP_EXTERNAL
     type: metadata
     metadataProvider:
