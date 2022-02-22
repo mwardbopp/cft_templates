@@ -9,7 +9,7 @@
     "owner": "f5owner",
     "restrictedSrcAddressApp": "37.228.202.168/32",
     "restrictedSrcAddressMgmt": "37.228.202.168/32",
-    "restrictedSrcPort": 443,
+    "restrictedSrcPort": "443",
     "uniqueString": "myUniqStr",
     "vpcCidr": "172.16.0.0/16",
     "vpc": "vpc-0101d41e7b5e8e421"
