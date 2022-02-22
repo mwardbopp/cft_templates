@@ -318,7 +318,6 @@ Metadata:
           - cost
           - environment
           - group
-          - owner
     ParameterLabels:
       application:
         default: application tag
@@ -332,8 +331,6 @@ Metadata:
         default: Number of Availability Zones
       numSubnets:
         default: Number of Subnets
-      owner:
-        default: owner Tag
       setPublicSubnet1:
         default: Set Subnet1 Public
       subnetMask:
@@ -471,10 +468,6 @@ Parameters:
     MaxValue: 8
     MinValue: 1
     Type: Number
-  owner:
-    Default: f5owner
-    Description: Owner Tag.
-    Type: String
   setPublicSubnet1:
     AllowedValues:
       - 'true'
@@ -528,8 +521,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   dhcpOptions:
     Type: 'AWS::EC2::DHCPOptions'
     Properties:
@@ -554,8 +546,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   vpcDhcpOptionsAssociation:
     Type: 'AWS::EC2::VPCDHCPOptionsAssociation'
     Properties:
@@ -581,8 +572,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   vpcGatewayAttachment:
     Type: 'AWS::EC2::VPCGatewayAttachment'
     Properties:
@@ -660,8 +650,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
       MapPublicIpOnLaunch: true
   subnet1A:
     Condition: subnet1A
@@ -739,8 +728,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
       MapPublicIpOnLaunch: !Ref setPublicSubnet1
   subnet2A:
     Condition: subnet2A
@@ -815,8 +803,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet3A:
     Condition: subnet3A
     DependsOn: ipv6CidrBlock
@@ -890,8 +877,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet4A:
     Condition: subnet4A
     DependsOn: ipv6CidrBlock
@@ -965,8 +951,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet5A:
     Condition: subnet5A
     DependsOn: ipv6CidrBlock
@@ -1040,8 +1025,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet6A:
     Condition: subnet6A
     DependsOn: ipv6CidrBlock
@@ -1115,8 +1099,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet7A:
     Condition: subnet7A
     DependsOn: ipv6CidrBlock
@@ -1190,8 +1173,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet0B:
     Condition: az2
     DependsOn: ipv6CidrBlock
@@ -1265,8 +1247,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
       MapPublicIpOnLaunch: true
   subnet1B:
     Condition: subnet1B
@@ -1344,8 +1325,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
       MapPublicIpOnLaunch: !Ref setPublicSubnet1
   subnet2B:
     Condition: subnet2B
@@ -1420,8 +1400,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet3B:
     Condition: subnet3B
     DependsOn: ipv6CidrBlock
@@ -1495,8 +1474,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet4B:
     Condition: subnet4B
     DependsOn: ipv6CidrBlock
@@ -1570,8 +1548,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet5B:
     Condition: subnet5B
     DependsOn: ipv6CidrBlock
@@ -1645,8 +1622,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet6B:
     Condition: subnet6B
     DependsOn: ipv6CidrBlock
@@ -1720,8 +1696,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet7B:
     Condition: subnet7B
     DependsOn: ipv6CidrBlock
@@ -1795,8 +1770,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet0C:
     Condition: az3
     DependsOn: ipv6CidrBlock
@@ -1870,8 +1844,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
       MapPublicIpOnLaunch: true
   subnet1C:
     Condition: subnet1C
@@ -1949,8 +1922,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
       MapPublicIpOnLaunch: !Ref setPublicSubnet1
   subnet2C:
     Condition: subnet2C
@@ -2025,8 +1997,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet3C:
     Condition: subnet3C
     DependsOn: ipv6CidrBlock
@@ -2100,8 +2071,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet4C:
     Condition: subnet4C
     DependsOn: ipv6CidrBlock
@@ -2175,8 +2145,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet5C:
     Condition: subnet5C
     DependsOn: ipv6CidrBlock
@@ -2250,8 +2219,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet6C:
     Condition: subnet6C
     DependsOn: ipv6CidrBlock
@@ -2325,8 +2293,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet7C:
     Condition: subnet7C
     DependsOn: ipv6CidrBlock
@@ -2400,8 +2367,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet0D:
     Condition: az4
     DependsOn: ipv6CidrBlock
@@ -2475,8 +2441,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
       MapPublicIpOnLaunch: true
   subnet1D:
     Condition: subnet1D
@@ -2554,8 +2519,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
       MapPublicIpOnLaunch: !Ref setPublicSubnet1
   subnet2D:
     Condition: subnet2D
@@ -2630,8 +2594,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
       MapPublicIpOnLaunch: true
   subnet3D:
     Condition: subnet3D
@@ -2706,8 +2669,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet4D:
     Condition: subnet4D
     DependsOn: ipv6CidrBlock
@@ -2781,8 +2743,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet5D:
     Condition: subnet5D
     DependsOn: ipv6CidrBlock
@@ -2856,8 +2817,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet6D:
     Condition: subnet6D
     DependsOn: ipv6CidrBlock
@@ -2931,8 +2891,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   subnet7D:
     Condition: subnet7D
     DependsOn: ipv6CidrBlock
@@ -3006,8 +2965,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   publicSubnetRouteTable:
     Type: 'AWS::EC2::RouteTable'
     Properties:
@@ -3026,8 +2984,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   publicSubnetRoute:
     DependsOn: vpcGatewayAttachment
     Type: 'AWS::EC2::Route'
@@ -3077,8 +3034,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   privateSubnetsRouteA:
     Condition: naclPrivateA
     Type: 'AWS::EC2::Route'
@@ -3105,8 +3061,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   privateSubnetsNetworkAclEntryInboundA:
     Condition: naclPrivateA
     Type: 'AWS::EC2::NetworkAclEntry'
@@ -3208,8 +3163,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   privateSubnetsRouteB:
     Condition: naclPrivateB
     Type: 'AWS::EC2::Route'
@@ -3236,8 +3190,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   privateSubnetsNetworkAclEntryInboundB:
     Condition: naclPrivateB
     Type: 'AWS::EC2::NetworkAclEntry'
@@ -3339,8 +3292,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   privateSubnetsRouteC:
     Condition: naclPrivateC
     Type: 'AWS::EC2::Route'
@@ -3367,8 +3319,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   privateSubnetsNetworkAclEntryInboundC:
     Condition: naclPrivateC
     Type: 'AWS::EC2::NetworkAclEntry'
@@ -3470,8 +3421,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   privateSubnetsRouteD:
     Condition: naclPrivateD
     Type: 'AWS::EC2::Route'
@@ -3498,8 +3448,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   privateSubnetsNetworkAclEntryInboundD:
     Condition: naclPrivateD
     Type: 'AWS::EC2::NetworkAclEntry'
@@ -3780,8 +3729,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   natEipB:
     Condition: naclPrivateB
     DependsOn: vpcGatewayAttachment
@@ -3800,8 +3748,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   natEipC:
     Condition: naclPrivateC
     DependsOn: vpcGatewayAttachment
@@ -3820,8 +3767,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   natEipD:
     Condition: naclPrivateD
     DependsOn: vpcGatewayAttachment
@@ -3840,8 +3786,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   natGatewayA:
     Condition: naclPrivateA
     DependsOn: vpcGatewayAttachment
@@ -3863,8 +3808,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   natGatewayB:
     Condition: naclPrivateB
     DependsOn: vpcGatewayAttachment
@@ -3886,8 +3830,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   natGatewayC:
     Condition: naclPrivateC
     DependsOn: vpcGatewayAttachment
@@ -3909,8 +3852,7 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
+
   natGatewayD:
     Condition: naclPrivateD
     DependsOn: vpcGatewayAttachment
@@ -3932,5 +3874,3 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
