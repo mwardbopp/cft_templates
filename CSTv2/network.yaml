@@ -5,9 +5,9 @@ Description: >-
   template creates AWS resources. You will be billed for the AWS resources used
   if you create a stack from this template. QS(0027)
 Conditions:
-  euWest1: !Equals
+  usEast1: !Equals
     - !Ref 'AWS::Region'
-    - eu-west-1
+    - us-east-1
   az2: !Or
     - !Equals
       - !Ref numAzs
