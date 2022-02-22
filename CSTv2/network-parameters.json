@@ -1,4 +1,5 @@
-{        "Parameters" :  
+{        
+  "Parameters" :  
     {
     "application" : "f5app",
     "cost" : "f5cost",
@@ -11,5 +12,5 @@
     "uniqueString" : "myUniqStr",
     "vpcCidr" : "10.0.0.0/16",
     "vpcTenancy" : "default"
-    }
+  }
 }

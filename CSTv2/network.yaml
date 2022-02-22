@@ -472,7 +472,7 @@ Parameters:
     MinValue: 1
     Type: Number
   owner:
-    Default: blahblah
+    Default: f5owner
     Description: Owner Tag.
     Type: String
   setPublicSubnet1:
@@ -528,6 +528,8 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
+        - Key: owner
+          Value: !Ref owner
   dhcpOptions:
     Type: 'AWS::EC2::DHCPOptions'
     Properties:
