@@ -3,7 +3,6 @@
     "application": "f5app",
     "cost": "f5cost",
     "createAppSecurityGroup": "true",
-    "createFailoverIngress": "false",
     "environment": "f5env",
     "group": "f5group",
     "owner": "f5owner",
