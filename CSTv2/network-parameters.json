@@ -2,7 +2,6 @@
   "Parameters" :  
     {
     "application" : "f5app",
-    "group" : "f5group",
     "cost" : "f5cost",
     "environment" : "f5env",
     "numAzs" :  "2",

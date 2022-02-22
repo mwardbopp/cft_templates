@@ -317,7 +317,6 @@ Metadata:
         Parameters:
           - cost
           - environment
-          - group
     ParameterLabels:
       application:
         default: application tag
@@ -325,8 +324,6 @@ Metadata:
         default: cost tag
       environment:
         default: environment tag
-      group:
-        default: group tag
       numAzs:
         default: Number of Availability Zones
       numSubnets:
@@ -452,10 +449,6 @@ Parameters:
     Default: f5env
     Description: Environment Tag.
     Type: String
-  group:
-    Default: f5group
-    Description: Group Tag.
-    Type: String
   numAzs:
     Default: 2
     Description: Number of Availability Zones to use in the VPC. Region must support number of availability  zones entered. Min 1 Max 4.
@@ -519,8 +512,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   dhcpOptions:
     Type: 'AWS::EC2::DHCPOptions'
@@ -544,8 +536,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   vpcDhcpOptionsAssociation:
     Type: 'AWS::EC2::VPCDHCPOptionsAssociation'
@@ -570,8 +561,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   vpcGatewayAttachment:
     Type: 'AWS::EC2::VPCGatewayAttachment'
@@ -648,8 +638,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
       MapPublicIpOnLaunch: true
   subnet1A:
@@ -726,8 +715,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
       MapPublicIpOnLaunch: !Ref setPublicSubnet1
   subnet2A:
@@ -801,8 +789,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet3A:
     Condition: subnet3A
@@ -875,8 +862,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet4A:
     Condition: subnet4A
@@ -949,8 +935,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet5A:
     Condition: subnet5A
@@ -1023,8 +1008,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet6A:
     Condition: subnet6A
@@ -1097,8 +1081,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet7A:
     Condition: subnet7A
@@ -1171,8 +1154,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet0B:
     Condition: az2
@@ -1245,8 +1227,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
       MapPublicIpOnLaunch: true
   subnet1B:
@@ -1323,8 +1304,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
       MapPublicIpOnLaunch: !Ref setPublicSubnet1
   subnet2B:
@@ -1398,8 +1378,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet3B:
     Condition: subnet3B
@@ -1472,8 +1451,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet4B:
     Condition: subnet4B
@@ -1546,8 +1524,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet5B:
     Condition: subnet5B
@@ -1620,8 +1597,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet6B:
     Condition: subnet6B
@@ -1694,8 +1670,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet7B:
     Condition: subnet7B
@@ -1768,8 +1743,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet0C:
     Condition: az3
@@ -1842,8 +1816,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
       MapPublicIpOnLaunch: true
   subnet1C:
@@ -1920,8 +1893,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
       MapPublicIpOnLaunch: !Ref setPublicSubnet1
   subnet2C:
@@ -1995,8 +1967,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet3C:
     Condition: subnet3C
@@ -2069,8 +2040,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet4C:
     Condition: subnet4C
@@ -2143,8 +2113,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet5C:
     Condition: subnet5C
@@ -2217,8 +2186,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet6C:
     Condition: subnet6C
@@ -2291,8 +2259,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet7C:
     Condition: subnet7C
@@ -2365,8 +2332,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet0D:
     Condition: az4
@@ -2439,8 +2405,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
       MapPublicIpOnLaunch: true
   subnet1D:
@@ -2517,8 +2482,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
       MapPublicIpOnLaunch: !Ref setPublicSubnet1
   subnet2D:
@@ -2592,8 +2556,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
       MapPublicIpOnLaunch: true
   subnet3D:
@@ -2667,8 +2630,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet4D:
     Condition: subnet4D
@@ -2741,8 +2703,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet5D:
     Condition: subnet5D
@@ -2815,8 +2776,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet6D:
     Condition: subnet6D
@@ -2889,8 +2849,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   subnet7D:
     Condition: subnet7D
@@ -2963,8 +2922,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   publicSubnetRouteTable:
     Type: 'AWS::EC2::RouteTable'
@@ -2982,8 +2940,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   publicSubnetRoute:
     DependsOn: vpcGatewayAttachment
@@ -3032,8 +2989,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   privateSubnetsRouteA:
     Condition: naclPrivateA
@@ -3059,8 +3015,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   privateSubnetsNetworkAclEntryInboundA:
     Condition: naclPrivateA
@@ -3161,8 +3116,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   privateSubnetsRouteB:
     Condition: naclPrivateB
@@ -3188,8 +3142,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   privateSubnetsNetworkAclEntryInboundB:
     Condition: naclPrivateB
@@ -3290,8 +3243,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   privateSubnetsRouteC:
     Condition: naclPrivateC
@@ -3317,8 +3269,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   privateSubnetsNetworkAclEntryInboundC:
     Condition: naclPrivateC
@@ -3419,8 +3370,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   privateSubnetsRouteD:
     Condition: naclPrivateD
@@ -3446,8 +3396,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   privateSubnetsNetworkAclEntryInboundD:
     Condition: naclPrivateD
@@ -3727,8 +3676,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   natEipB:
     Condition: naclPrivateB
@@ -3746,8 +3694,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   natEipC:
     Condition: naclPrivateC
@@ -3765,8 +3712,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   natEipD:
     Condition: naclPrivateD
@@ -3784,8 +3730,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   natGatewayA:
     Condition: naclPrivateA
@@ -3806,8 +3751,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   natGatewayB:
     Condition: naclPrivateB
@@ -3828,8 +3772,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   natGatewayC:
     Condition: naclPrivateC
@@ -3850,8 +3793,7 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
 
   natGatewayD:
     Condition: naclPrivateD
@@ -3872,5 +3814,4 @@ Resources:
           Value: !Ref cost
         - Key: environment
           Value: !Ref environment
-        - Key: group
-          Value: !Ref group
+
