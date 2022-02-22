@@ -9,7 +9,7 @@
     "numSubnets" : "3",
     "setPublicSubnet1" : "false",
     "subnetMask" : "24",
-    "uniqueString" : "myUniqStr12342",
+    "uniqueString" : "m12342",
     "vpcCidr" : "10.0.0.0/16",
     "vpcTenancy" : "default"
   }
