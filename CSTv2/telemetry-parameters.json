@@ -13,6 +13,6 @@
       "group": "f5group",
       "metricNameSpace": "f5-scaling-metrics",
       "owner": "f5owner",
-      "s3BucketName": "tests3bucket"
+      "s3BucketName": "mwb-randoms3bucket1"
     }
   }
