@@ -56,7 +56,7 @@ Outputs:
   stackName:
     Description: dag nested stack name
     Value: !Ref "AWS::StackName"
-  bigIpExternalSecurityGroup:
+  externalSecurityGroupId:
     Description: BIG-IP Security Group (External or Public)
     Value: !Ref BigipExternalSecurityGroup
   appSecurityGroupId:
