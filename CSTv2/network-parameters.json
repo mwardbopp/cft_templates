@@ -2,13 +2,14 @@
   "Parameters" :  
     {
     "application" : "f5app",
+    "group" : "f5group",
     "cost" : "f5cost",
     "environment" : "f5env",
     "numAzs" :  "2",
     "numSubnets" : "3",
     "setPublicSubnet1" : "false",
     "subnetMask" : "24",
-    "uniqueString" : "myUniqStr",
+    "uniqueString" : "myUniqStr12342",
     "vpcCidr" : "10.0.0.0/16",
     "vpcTenancy" : "default"
   }
