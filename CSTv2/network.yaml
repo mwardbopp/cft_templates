@@ -528,8 +528,6 @@ Resources:
           Value: !Ref environment
         - Key: group
           Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
   dhcpOptions:
     Type: 'AWS::EC2::DHCPOptions'
     Properties:
