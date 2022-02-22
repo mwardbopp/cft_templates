@@ -472,7 +472,7 @@ Parameters:
     MinValue: 1
     Type: Number
   owner:
-    Default: f5owner
+    Default: blahblah
     Description: Owner Tag.
     Type: String
   setPublicSubnet1:
