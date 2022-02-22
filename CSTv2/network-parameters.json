@@ -1,50 +1,16 @@
-[
+{        "Parameters" :  
     {
-      "ParameterKey": "application",
-      "ParameterValue": "f5app"
-    },
-    {
-      "ParameterKey": "cost",
-      "ParameterValue": "f5cost"
-    },
-    {
-      "ParameterKey": "environment",
-      "ParameterValue": "f5env"
-    },
-    {
-      "ParameterKey": "group",
-      "ParameterValue": "f5group"
-    },
-    {
-      "ParameterKey": "numAzs",
-      "ParameterValue": 2
-    },
-    {
-      "ParameterKey": "numSubnets",
-      "ParameterValue": 3
-    },
-    {
-      "ParameterKey": "owner",
-      "ParameterValue": "f5owner"
-    },
-    {
-      "ParameterKey": "setPublicSubnet1",
-      "ParameterValue": "false"
-    },
-    {
-      "ParameterKey": "subnetMask",
-      "ParameterValue": 24
-    },
-    {
-      "ParameterKey": "uniqueString",
-      "ParameterValue": "myUniqStr"
-    },
-    {
-      "ParameterKey": "vpcCidr",
-      "ParameterValue": "10.0.0.0/16"
-    },
-    {
-      "ParameterKey": "vpcTenancy",
-      "ParameterValue": "default"
+    "bigIqSecretArn" : "arn:aws:secretsmanager:eu-west-1:498142139943:secret:bigiq-lic-pwd-RW2KUB",
+    "application" : "f5app",
+    "cost" : "f5cost",
+    "environment" : "f5env",
+    "numAzs" :  2,
+    "numSubnets" : 3,
+    "owner" : "f5owner",
+    "setPublicSubnet1" : "false",
+    "subnetMask" : 24,
+    "uniqueString" : "myUniqStr",
+    "vpcCidr" : "10.0.0.0/16",
+    "vpcTenancy" : "default"
     }
-  ]
+}
