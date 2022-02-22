@@ -6,7 +6,6 @@
     "environment" : "f5env",
     "numAzs" :  "2",
     "numSubnets" : "3",
-    "owner" : "f5owner",
     "setPublicSubnet1" : "false",
     "subnetMask" : "24",
     "uniqueString" : "myUniqStr",
