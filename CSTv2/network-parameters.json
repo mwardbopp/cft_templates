@@ -1,6 +1,5 @@
 {        "Parameters" :  
     {
-    "bigIqSecretArn" : "arn:aws:secretsmanager:eu-west-1:498142139943:secret:bigiq-lic-pwd-RW2KUB",
     "application" : "f5app",
     "cost" : "f5cost",
     "environment" : "f5env",
