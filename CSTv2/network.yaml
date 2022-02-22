@@ -3921,33 +3921,6 @@ Resources:
           Value: !Ref group
         - Key: owner
           Value: !Ref owner
-  natGatewayD:
-    Condition: naclPrivateD
-    DependsOn: vpcGatewayAttachment
-    Type: 'AWS::EC2::NatGateway'
-    Properties:
-      AllocationId: !GetAtt
-        - natEipD
-        - AllocationId
-      SubnetId: !Ref subnet0D
-      Tags:
-        - Key: Name
-          Value: !Join
-            - '-'
-            - - !Ref uniqueString
-              - Nat Gateway Subnets D
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
-    - !Equals
-      - !Ref numAzs
-      - '2'
-    - !Condition az3
   az3: !Or
     - !Equals
       - !Ref numAzs
