@@ -8,7 +8,7 @@
       "createCloudWatchDashboard": "false",
       "createCloudWatchLogGroup": "false",
       "createCloudWatchLogStream": "false",
-      "createS3Bucket": "false",
+      "createS3Bucket": "true",
       "environment": "f5env",
       "group": "f5group",
       "metricNameSpace": "f5-scaling-metrics",
