@@ -9,7 +9,7 @@
             "externalSubnetId" :  "subnet-0420aa08bdce8ab69",
             "imageId" :  "ami-0fb9a63625fb791a0",
             "instanceType" :  "m5.xlarge",
-            "internalSecurityGroupId" :  "sg-03e6b56f497ce25f4",
+            "internalSecurityGroupId" :  { "Ref" : "appSecurityGroupId" },
             "internalSelfIp" :  "172.16.3.50",
             "internalSubnetId" :  "subnet-0da81c7cf75177937",
             "mgmtPublicIpId" :  "eipalloc-0670791c76631c968",
