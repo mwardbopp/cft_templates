@@ -66,6 +66,9 @@ Outputs:
   internalSecurityGroupId:
     Description: Internal Security Group ID
     Value: !Ref BigipInternalSecurityGroup
+  mgmtSecurityGroupId:
+    Description: MGMT Security Group ID
+    Value: !Ref BigipMgmtSecurityGroup
 Parameters:
   application:
     Default: f5app
@@ -117,6 +120,8 @@ Parameters:
     Description: REQUIRED - The Security Group ID for Internal
     Type: String
     Default: sg-05db9ed2a625c5558
+  mgmtSecurityGroupId:
+    Type: String
   uniqueString:
     AllowedPattern: ^[a-zA-Z][a-zA-Z0-9]{1,11}$
     ConstraintDescription: Must Contain between 1 and 12 alphanumeric characters with first character as a letter.
@@ -276,6 +281,38 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-bigip-internal-sg'
+        - Key: owner
+          Value: !Ref owner
+      VpcId: !Ref vpc
+    Type: 'AWS::EC2::SecurityGroup'
+  BigipMgmtSecurityGroup:
+    Properties:
+      GroupDescription: 'Public or External interface rules, including BIG-IP management'
+      SecurityGroupIngress:
+        - CidrIp: !Ref restrictedSrcAddressMgmt
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+        - CidrIp: !Ref restrictedSrcAddressMgmt
+          FromPort: !Ref restrictedSrcPort
+          IpProtocol: tcp
+          ToPort: !Ref restrictedSrcPort
+        - CidrIp: !Ref restrictedSrcAddressMgmt
+          FromPort: 443
+          IpProtocol: tcp
+          ToPort: 443
+      Tags:
+        - Key: costcenter
+          Value: !Ref cost
+        - Key: environment
+          Value: !Ref environment
+        - Key: group
+          Value: !Ref group
+        - Key: Name
+          Value: !Join
+            - ''
+            - - !Ref uniqueString
+              - '-bigip-mgmt-sg'
         - Key: owner
           Value: !Ref owner
       VpcId: !Ref vpc
