@@ -65,7 +65,7 @@ Outputs:
     Value: !Ref appSecurityGroup
   internalSecurityGroupId:
     Description: Internal Security Group ID
-    Value: !Ref internalSecurityGroupId
+    Value: !Ref BigipInternalSecurityGroup
 Parameters:
   application:
     Default: f5app
@@ -232,7 +232,7 @@ Resources:
               - '-application-sg'
         - Key: owner
           Value: !Ref owner
-  internalSecurityGroupId:
+  BigipInternalSecurityGroup:
     Properties:
       GroupDescription: 'Internal interface rules'
       SecurityGroupIngress:
