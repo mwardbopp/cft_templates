@@ -116,6 +116,7 @@ Parameters:
   internalSecurityGroupId:
     Description: REQUIRED - The Security Group ID for Internal
     Type: String
+    Default: sg-05db9ed2a625c5558
   uniqueString:
     AllowedPattern: ^[a-zA-Z][a-zA-Z0-9]{1,11}$
     ConstraintDescription: Must Contain between 1 and 12 alphanumeric characters with first character as a letter.
