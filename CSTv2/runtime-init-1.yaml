@@ -104,3 +104,6 @@ extension_services:
             licensePool: '{{ RUNTIME_INIT_CONFIG.BIGIQ_LIC_POOL }}'
             bigIpUsername: admin
             bigIpPassword: '{{ ADMIN_PASS }}'
+            skuKeyword1: '{{ RUNTIME_INIT_CONFIG.SKUKEYWORD1 }}'
+            skuKeyword2: '{{ RUNTIME_INIT_CONFIG.SKUKEYWORD2 }}'
+            unitOfMeasure: '{{ RUNTIME_INIT_CONFIG.UNITOFMEASURE }}'
