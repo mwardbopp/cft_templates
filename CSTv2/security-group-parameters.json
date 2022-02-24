@@ -11,6 +11,7 @@
     "restrictedSrcPort": "443",
     "uniqueString": "myUniqStr",
     "vpcCidr": "172.16.0.0/16",
-    "vpc": "vpc-0101d41e7b5e8e421"
+    "vpc": "vpc-0101d41e7b5e8e421",
+    "bigiqhost": "10.0.1.6/32"
   }
 }

@@ -111,6 +111,13 @@ Parameters:
     MaxLength: '18'
     MinLength: '9'
     Type: String
+  bigiqhost:
+    AllowedPattern: (\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})
+    ConstraintDescription: Must be a valid IP CIDR range of the form x.x.x.x/x.
+    Description: REQUIRED - The IP address of the BIGIQ License Manager.
+    MaxLength: '18'
+    MinLength: '9'
+    Type: String
   restrictedSrcPort:
     ConstraintDescription: Must be a valid integer.
     Default: 8443
@@ -299,6 +306,10 @@ Resources:
           IpProtocol: tcp
           ToPort: !Ref restrictedSrcPort
         - CidrIp: !Ref restrictedSrcAddressMgmt
+          FromPort: 443
+          IpProtocol: tcp
+          ToPort: 443
+        - CidrIp: !Ref bigiqhost
           FromPort: 443
           IpProtocol: tcp
           ToPort: 443
