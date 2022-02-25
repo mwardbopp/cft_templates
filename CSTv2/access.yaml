@@ -468,6 +468,12 @@ Resources:
                 Resource:
                   - '*'
               - Action:
+                  - 'kms:Decrypt'
+                  - 'kms:GenerateDataKey'
+                Effect: Allow
+                Resource:
+                  - 'arn:aws:kms:eu-west-1:498142139943:key/8878f20a-35cf-4926-8164-e61813ad49e7'
+              - Action:
                   - 'secretsmanager:DescribeSecret'
                   - 'secretsmanager:GetResourcePolicy'
                   - 'secretsmanager:GetSecretValue'
