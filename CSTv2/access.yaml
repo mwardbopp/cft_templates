@@ -394,6 +394,12 @@ Resources:
                 Effect: Allow
                 Resource:
                   - '*'
+              - Action:
+                  - 'kms:Decrypt'
+                  - 'kms:GenerateDataKey'
+                Effect: Allow
+                Resources:
+                  - 'arn:aws:kms:eu-west-1:498142139943:key/8878f20a-35cf-4926-8164-e61813ad49e7'
             Version: 2012-10-17
           PolicyName: !Join
             - ''
