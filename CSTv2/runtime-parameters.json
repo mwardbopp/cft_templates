@@ -3,5 +3,8 @@
 "BIGIQ_LIC_MGR": "licensemgr",
 "BIGIQ_LIC_POOL": "aws",
 "bigip-admin-pwd": "bigip-admin-pwd",
-"bigiq-lic-pwd": "bigiq-lic-pwd"
+"bigiq-lic-pwd": "bigiq-lic-pwd",
+"skuKeyword1": "",
+"skuKeyword2": "",
+"unitOfMeasure" : ""
 }
