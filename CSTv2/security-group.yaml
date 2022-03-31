@@ -56,13 +56,19 @@ Outputs:
   stackName:
     Description: dag nested stack name
     Value: !Ref "AWS::StackName"
-  bigIpExternalSecurityGroup:
+  externalSecurityGroupId:
     Description: BIG-IP Security Group (External or Public)
     Value: !Ref BigipExternalSecurityGroup
   appSecurityGroupId:
     Condition: createAppSecurityGroup
     Description: App Security Group ID
     Value: !Ref appSecurityGroup
+  internalSecurityGroupId:
+    Description: Internal Security Group ID
+    Value: !Ref BigipInternalSecurityGroup
+  mgmtSecurityGroupId:
+    Description: MGMT Security Group ID
+    Value: !Ref BigipMgmtSecurityGroup
 Parameters:
   application:
     Default: f5app
@@ -105,11 +111,25 @@ Parameters:
     MaxLength: '18'
     MinLength: '9'
     Type: String
+  bigiqhost:
+    AllowedPattern: (\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})
+    ConstraintDescription: Must be a valid IP CIDR range of the form x.x.x.x/x.
+    Description: REQUIRED - The IP address of the BIGIQ License Manager.
+    MaxLength: '18'
+    MinLength: '9'
+    Type: String
   restrictedSrcPort:
     ConstraintDescription: Must be a valid integer.
     Default: 8443
     Description: The management port used for BIG-IP management GUI.
     Type: Number
+  internalSecurityGroupId:
+    Description: REQUIRED - The Security Group ID for Internal
+    Type: String
+    Default: sg-05db9ed2a625c5558
+  mgmtSecurityGroupId:
+    Type: String
+    Default: sg-05db9ed2a625c5558
   uniqueString:
     AllowedPattern: ^[a-zA-Z][a-zA-Z0-9]{1,11}$
     ConstraintDescription: Must Contain between 1 and 12 alphanumeric characters with first character as a letter.
@@ -225,3 +245,87 @@ Resources:
               - '-application-sg'
         - Key: owner
           Value: !Ref owner
+  BigipInternalSecurityGroup:
+    Properties:
+      GroupDescription: 'Internal interface rules'
+      SecurityGroupIngress:
+        - CidrIp: !Ref vpcCidr
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+        - CidrIp: !Ref restrictedSrcAddressMgmt
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+        - CidrIp: !Ref restrictedSrcAddressMgmt
+          FromPort: !Ref restrictedSrcPort
+          IpProtocol: tcp
+          ToPort: !Ref restrictedSrcPort
+        - CidrIp: !Ref restrictedSrcAddressApp
+          FromPort: 80
+          IpProtocol: tcp
+          ToPort: 80
+        - CidrIp: !Ref restrictedSrcAddressApp
+          FromPort: 443
+          IpProtocol: tcp
+          ToPort: 443
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: !Ref vpcCidr
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: !Ref vpcCidr
+      Tags:
+        - Key: costcenter
+          Value: !Ref cost
+        - Key: environment
+          Value: !Ref environment
+        - Key: group
+          Value: !Ref group
+        - Key: Name
+          Value: !Join
+            - ''
+            - - !Ref uniqueString
+              - '-bigip-internal-sg'
+        - Key: owner
+          Value: !Ref owner
+      VpcId: !Ref vpc
+    Type: 'AWS::EC2::SecurityGroup'
+  BigipMgmtSecurityGroup:
+    Properties:
+      GroupDescription: 'Public or External interface rules, including BIG-IP management'
+      SecurityGroupIngress:
+        - CidrIp: !Ref restrictedSrcAddressMgmt
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+        - CidrIp: !Ref restrictedSrcAddressMgmt
+          FromPort: !Ref restrictedSrcPort
+          IpProtocol: tcp
+          ToPort: !Ref restrictedSrcPort
+        - CidrIp: !Ref restrictedSrcAddressMgmt
+          FromPort: 443
+          IpProtocol: tcp
+          ToPort: 443
+        - CidrIp: !Ref bigiqhost
+          FromPort: 443
+          IpProtocol: tcp
+          ToPort: 443
+      Tags:
+        - Key: costcenter
+          Value: !Ref cost
+        - Key: environment
+          Value: !Ref environment
+        - Key: group
+          Value: !Ref group
+        - Key: Name
+          Value: !Join
+            - ''
+            - - !Ref uniqueString
+              - '-bigip-mgmt-sg'
+        - Key: owner
+          Value: !Ref owner
+      VpcId: !Ref vpc
+    Type: 'AWS::EC2::SecurityGroup'

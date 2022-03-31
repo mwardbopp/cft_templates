@@ -1,0 +1,18 @@
+{
+    "Parameters": {
+      "application": "f5app",
+      "cloudWatchLogGroupName": "f5telemetry",
+      "cloudWatchLogStreamName": "f5-waf-logs",
+      "cloudWatchDashboardName": "F5-BIGIP-WAF-View",
+      "cost": "f5cost",
+      "createCloudWatchDashboard": "false",
+      "createCloudWatchLogGroup": "false",
+      "createCloudWatchLogStream": "false",
+      "createS3Bucket": "true",
+      "environment": "f5env",
+      "group": "f5group",
+      "metricNameSpace": "f5-scaling-metrics",
+      "owner": "f5owner",
+      "s3BucketName": "mwb-randoms3bucket1"
+    }
+  }

@@ -1,55 +1,17 @@
-[
-  {
-    "ParameterKey": "application",
-    "ParameterValue": "f5app"
-  },
-  {
-    "ParameterKey": "cost",
-    "ParameterValue": "f5cost"
-  },
-  {
-    "ParameterKey": "createAppSecurityGroup",
-    "ParameterValue": "true"
-  },
-  {
-    "ParameterKey": "createFailoverIngress",
-    "ParameterValue": "false"
-  },
-  {
-    "ParameterKey": "environment",
-    "ParameterValue": "f5env"
-  },
-  {
-    "ParameterKey": "group",
-    "ParameterValue": "f5group"
-  },
-  {
-    "ParameterKey": "owner",
-    "ParameterValue": "f5owner"
-  },
-  {
-    "ParameterKey": "restrictedSrcAddressApp",
-    "ParameterValue": "37.228.202.168/32"
-  },
-  {
-    "ParameterKey": "restrictedSrcAddressMgmt",
-    "ParameterValue": "37.228.202.168/32"
-  },
-  {
-    "ParameterKey": "restrictedSrcPort",
-    "ParameterValue": 443
-  },
-  {
-    "ParameterKey": "uniqueString",
-    "ParameterValue": "myUniqStr"
-  },
-  {
-    "ParameterKey": "vpcCidr",
-    "ParameterValue": "172.16.0.0/16"
-  },
-  {
-    "ParameterKey": "vpc",
-    "ParameterValue": "vpc-0101d41e7b5e8e421"
+{
+  "Parameters": {
+    "application": "f5app",
+    "cost": "f5cost",
+    "createAppSecurityGroup": "true",
+    "environment": "f5env",
+    "group": "f5group",
+    "owner": "f5owner",
+    "restrictedSrcAddressApp": "37.228.202.168/32",
+    "restrictedSrcAddressMgmt": "37.228.202.168/32",
+    "restrictedSrcPort": "443",
+    "uniqueString": "myUniqStr",
+    "vpcCidr": "172.16.0.0/16",
+    "vpc": "vpc-0101d41e7b5e8e421",
+    "bigiqhost": "10.0.1.6/32"
   }
-]
-© 2022 GitHub, Inc.
+}

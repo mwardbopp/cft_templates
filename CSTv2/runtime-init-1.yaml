@@ -53,15 +53,6 @@ runtime_parameters:
       environment: aws
       field: subnet-ipv4-cidr-block
       index: 1
-bigip_ready_enabled: []
-  # - name: provision_asm_module
-  #   type: inline
-  #   commands:
-  #     - tmsh modify sys provision asm level nominal
-  # - name: save_sys_config
-  #   type: inline
-  #   commands:
-  #     - tmsh save sys config
 extension_packages:
   install_operations: [
     {
@@ -95,12 +86,3 @@ extension_services:
             userType: regular
             password: '{{ ADMIN_PASS }}'
             shell: bash
-          myLicense:
-            class: License
-            licenseType: licensePool
-            bigIqHost: '{{ RUNTIME_INIT_CONFIG.BIGIQ_HOST }}'
-            bigIqUsername: '{{ RUNTIME_INIT_CONFIG.BIGIQ_LIC_MGR }}'
-            bigIqPassword: '{{ BIGIQ_LIC_PASS }}'
-            licensePool: '{{ RUNTIME_INIT_CONFIG.BIGIQ_LIC_POOL }}'
-            bigIpUsername: admin
-            bigIpPassword: '{{ ADMIN_PASS }}'

@@ -792,7 +792,6 @@ Resources:
         - !Ref 'AWS::NoValue'
       ImageId: !Ref 'imageId'
       InstanceType: !Ref 'instanceType'
-      KeyName: !Ref 'sshKey'
       NetworkInterfaces:
         - Description: Management Interface
           DeviceIndex: '0'
