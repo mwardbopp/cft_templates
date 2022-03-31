@@ -5,7 +5,7 @@
             "bigIpRuntimeInitPackageUrl" :  "https://wardbopp-s3.s3.eu-west-1.amazonaws.com/f5-bigip-runtime-init-1.4.0-1.gz.run",
             "externalSecurityGroupId" :  "sg-0aeb28697b8051280",
             "externalSelfIp" :  "172.16.2.50",
-            "externalServiceIps" :  "172.16.2.51",
+            "externalServiceIps" :  "172.16.2.51, 172.16.2.52",
             "externalSubnetId" :  "subnet-0420aa08bdce8ab69",
             "imageId" :  "ami-0fb9a63625fb791a0",
             "instanceType" :  "m5.xlarge",
