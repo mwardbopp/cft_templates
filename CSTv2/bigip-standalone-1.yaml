@@ -573,7 +573,7 @@ Resources:
           PrivateIpAddress: !Select
             - '0'
             - !Ref 'externalServiceIps'
-         - Primary: false
+        - Primary: false
           PrivateIpAddress: !Select
             - '1'
             - !Ref 'externalServiceIps'           
