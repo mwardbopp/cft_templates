@@ -574,9 +574,7 @@ Resources:
             - '0'
             - !Ref 'externalServiceIps'
         - Primary: false
-          PrivateIpAddress: !Select
-            - '1'
-            - !Ref 'externalServiceIps'           
+          PrivateIpAddress: !Select [1, !Ref externalServiceIps]           
       SubnetId: !Ref 'externalSubnetId'
     Type: 'AWS::EC2::NetworkInterface'
   BigipVipEipAssociation:
