@@ -529,7 +529,16 @@ Resources:
           - useInternalSecurityGroupId
           - !Ref 'internalSecurityGroupId'
           - !Ref 'AWS::NoValue'
-      PrivateIpAddress: !Ref 'internalSelfIp'
+
+      PrivateIpAddresses:
+        - Primary: true
+          PrivateIpAddress: !Ref 'internalSelfIp'
+        - Primary: false
+          PrivateIpAddress: !Select
+            - '0'
+            - !Ref 'internalServiceIps'
+        - Primary: false
+          PrivateIpAddress: !Select [1, !Ref internalServiceIps]           
       SubnetId: !Ref 'internalSubnetId'
     Type: 'AWS::EC2::NetworkInterface'
   BigipStaticManagementInterface:
