@@ -545,7 +545,9 @@ Resources:
             - '0'
             - !Ref 'internalServiceIps'
         - Primary: false
-          PrivateIpAddress: !Select [1, !Ref internalServiceIps]           
+          PrivateIpAddress: !Select [1, !Ref internalServiceIps]    
+        - Primary: false
+          PrivateIpAddress: !Select [2, !Ref internalServiceIps]        
       SubnetId: !Ref 'internalSubnetId'
     Type: 'AWS::EC2::NetworkInterface'
   BigipStaticManagementInterface:
