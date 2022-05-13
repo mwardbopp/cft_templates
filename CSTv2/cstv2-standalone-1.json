@@ -12,7 +12,7 @@
             "internalSecurityGroupId" :  { "Ref" : "internalSecurityGroupId" },
             "internalSelfIp" :  "172.16.3.50",
             "internalSubnetId" :  "subnet-0da81c7cf75177937",
-            "mgmtPublicIpId" :  "eipalloc-062783af79dfd036c",
+            "mgmtPublicIpId" :  "eipalloc-0163d6e2c766cfd61",
             "mgmtSecurityGroupId" :  { "Ref" : "mgmtSecurityGroupId" },
             "mgmtSelfIp" :  "172.16.1.50",
             "mgmtSubnetId" :  "subnet-0eff71c70346a5103",
