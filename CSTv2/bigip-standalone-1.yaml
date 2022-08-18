@@ -216,6 +216,7 @@ Metadata:
         Parameters:
           - externalSelfIp
           - externalServiceIps
+          - internalServiceIps
           - externalSubnetId
           - internalSelfIp
           - internalSubnetId
@@ -264,6 +265,8 @@ Metadata:
       externalSelfIp:
         default: External Private IP Address
       externalServiceIps:
+        default: External private IP's
+      internalServiceIps:
         default: External private IP's
       externalSubnetId:
         default: External Subnet Id
@@ -406,6 +409,11 @@ Parameters:
     Description: An array of one or more private IP addresses to apply to the external
       network interface as secondary private addresses.
     Type: CommaDelimitedList
+  internalServiceIps:
+    Default: ''
+    Description: An array of one or more private IP addresses to apply to the external
+      network interface as secondary private addresses.
+    Type: CommaDelimitedList
   externalSubnetId:
     Default: ''
     Description: 'The resource ID of the external subnet. ***Note:*** Subnet ID parameters
@@ -529,7 +537,19 @@ Resources:
           - useInternalSecurityGroupId
           - !Ref 'internalSecurityGroupId'
           - !Ref 'AWS::NoValue'
-      PrivateIpAddress: !Ref 'internalSelfIp'
+      PrivateIpAddresses:
+        - Primary: true
+          PrivateIpAddress: !Ref 'internalSelfIp'
+        - Primary: false
+          PrivateIpAddress: !Select
+            - '0'
+            - !Ref 'internalServiceIps'
+        - Primary: false
+          PrivateIpAddress: !Select [1, !Ref internalServiceIps]    
+        - Primary: false
+          PrivateIpAddress: !Select [2, !Ref internalServiceIps]
+        - Primary: false
+          PrivateIpAddress: !Select [3, !Ref internalServiceIps]      
       SubnetId: !Ref 'internalSubnetId'
     Type: 'AWS::EC2::NetworkInterface'
   BigipStaticManagementInterface:
@@ -573,6 +593,8 @@ Resources:
           PrivateIpAddress: !Select
             - '0'
             - !Ref 'externalServiceIps'
+        - Primary: false
+          PrivateIpAddress: !Select [1, !Ref externalServiceIps]           
       SubnetId: !Ref 'externalSubnetId'
     Type: 'AWS::EC2::NetworkInterface'
   BigipVipEipAssociation:

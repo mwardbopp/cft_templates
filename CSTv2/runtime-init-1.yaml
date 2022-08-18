@@ -86,3 +86,12 @@ extension_services:
             userType: regular
             password: '{{ ADMIN_PASS }}'
             shell: bash
+          myLicense:
+            class: License
+            licenseType: licensePool
+            bigIqHost: '{{ RUNTIME_INIT_CONFIG.BIGIQ_HOST }}'
+            bigIqUsername: '{{ RUNTIME_INIT_CONFIG.BIGIQ_LIC_MGR }}'
+            bigIqPassword: '{{ BIGIQ_LIC_PASS }}'
+            licensePool: '{{ RUNTIME_INIT_CONFIG.BIGIQ_LIC_POOL }}'
+            bigIpUsername: admin
+            bigIpPassword: '{{ ADMIN_PASS }}'
