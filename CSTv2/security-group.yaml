@@ -23,11 +23,6 @@ Metadata:
           default: Resources Tags
         Parameters:
           - uniqueString
-          - application
-          - cost
-          - environment
-          - group
-          - owner
     ParameterLabels:
       application:
         default: Application
@@ -70,32 +65,12 @@ Outputs:
     Description: MGMT Security Group ID
     Value: !Ref BigipMgmtSecurityGroup
 Parameters:
-  application:
-    Default: f5app
-    Description: Application Tag.
-    Type: String
-  cost:
-    Default: f5cost
-    Description: Cost Center Tag.
-    Type: String
   createAppSecurityGroup:
     AllowedValues:
       - 'true'
       - 'false'
     Default: 'false'
     Description: Select true if you would like to create a Security Group for your Application.
-    Type: String
-  environment:
-    Default: f5env
-    Description: Environment Tag.
-    Type: String
-  group:
-    Default: f5group
-    Description: Group Tag.
-    Type: String
-  owner:
-    Default: f5owner
-    Description: Owner Tag.
     Type: String
   restrictedSrcAddressApp:
     AllowedPattern: (\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})
@@ -181,19 +156,11 @@ Resources:
           ToPort: 443
           CidrIp: !Ref vpcCidr
       Tags:
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
         - Key: Name
           Value: !Join
             - ''
             - - !Ref uniqueString
               - '-bigip-external-sg'
-        - Key: owner
-          Value: !Ref owner
       VpcId: !Ref vpc
     Type: 'AWS::EC2::SecurityGroup'
   BigipSecurityGroupIngressManagementGuiPort:
@@ -232,19 +199,11 @@ Resources:
           ToPort: 443
           CidrIp: !Ref vpcCidr
       Tags:
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
         - Key: Name
           Value: !Join
             - ''
             - - !Ref uniqueString
               - '-application-sg'
-        - Key: owner
-          Value: !Ref owner
   BigipInternalSecurityGroup:
     Properties:
       GroupDescription: 'Internal interface rules'
@@ -278,19 +237,11 @@ Resources:
           ToPort: 443
           CidrIp: !Ref vpcCidr
       Tags:
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
         - Key: Name
           Value: !Join
             - ''
             - - !Ref uniqueString
               - '-bigip-internal-sg'
-        - Key: owner
-          Value: !Ref owner
       VpcId: !Ref vpc
     Type: 'AWS::EC2::SecurityGroup'
   BigipMgmtSecurityGroup:
@@ -314,18 +265,10 @@ Resources:
           IpProtocol: tcp
           ToPort: 443
       Tags:
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
         - Key: Name
           Value: !Join
             - ''
             - - !Ref uniqueString
               - '-bigip-mgmt-sg'
-        - Key: owner
-          Value: !Ref owner
       VpcId: !Ref vpc
     Type: 'AWS::EC2::SecurityGroup'

@@ -108,17 +108,9 @@ Outputs:
     Description: IAM policy for Lifecycle Hook notifications
     Value: !GetAtt BigIqNotificationRole.Arn
 Parameters:
-  application:
-    Default: f5app
-    Description: Application Tag.
-    Type: String
   bigIqSecretArn:
     Default: ''
     Description: The ARN of the AWS secret containing the password used during BIG-IP licensing via BIG-IQ.
-    Type: String
-  cost:
-    Default: f5cost
-    Description: Cost Center Tag.
     Type: String
   createAmiRole:
     AllowedValues:
@@ -133,18 +125,6 @@ Parameters:
       - 'false'
     Default: 'false'
     Description: Value of true creates IAM roles required to revoke license assignments from BIG-IQ.
-    Type: String
-  environment:
-    Default: f5env
-    Description: Environment Tag.
-    Type: String
-  group:
-    Default: f5group
-    Description: Group Tag.
-    Type: String
-  owner:
-    Default: f5owner
-    Description: Owner Tag.
     Type: String
   s3Bucket:
     Default: ''
@@ -205,14 +185,6 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-BigipCopyZipsRole'
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
         - Key: DeleteKey
           Value: !Ref uniqueString
   LambdaAccessRole:
@@ -266,14 +238,6 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-bigip-access-role'
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
   LambdaAmiExecutionRole:
     Condition: createAmiRole
     Type: 'AWS::IAM::Role'
@@ -309,14 +273,6 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-lambda-ami-role'
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
   BigIqNotificationRole:
     Condition: createBigIqRoles
     Type: AWS::IAM::Role
@@ -338,14 +294,6 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-bigip-notification-role'
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
   BigIpStandardAccessRole:
     Condition: standard
     Type: 'AWS::IAM::Role'
@@ -411,14 +359,6 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-bigip-standard-access-role'
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
   BigIpSecretAccessRole:
     Condition: secret
     Type: 'AWS::IAM::Role'
@@ -499,16 +439,6 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-bigip-secret-access-role'
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
-        - Key: DeleteKey
-          Value: !Ref uniqueString
   BigIpS3AccessRole:
     Condition: s3
     Type: 'AWS::IAM::Role'
@@ -585,14 +515,6 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-bigip-s3-access-role'
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
   BigIpSecretS3AccessRole:
     Condition: secretS3
     Type: 'AWS::IAM::Role'
@@ -684,14 +606,6 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-bigip-secret-s3-access-role'
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
   BigIpHighAvailabilityAccessRole:
     Condition: failover
     Type: 'AWS::IAM::Role'
@@ -784,14 +698,6 @@ Resources:
             - ''
             - - !Ref uniqueString
               - '-bigip-high-availability-access-role'
-        - Key: costcenter
-          Value: !Ref cost
-        - Key: environment
-          Value: !Ref environment
-        - Key: group
-          Value: !Ref group
-        - Key: owner
-          Value: !Ref owner
   BigIpStandardInstanceProfile:
     Condition: standard
     Type: 'AWS::IAM::InstanceProfile'

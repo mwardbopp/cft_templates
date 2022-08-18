@@ -233,14 +233,7 @@ Metadata:
           default: Resource Tags
         Parameters:
           - uniqueString
-          - application
-          - cost
-          - environment
-          - group
-          - owner
     ParameterLabels:
-      application:
-        default: Application
       bigIpInstanceProfile:
         default: Instance profile
       bigIpRuntimeInitConfig:
@@ -347,10 +340,6 @@ Outputs:
         - BigipStaticInternalInterface
         - PrimaryPrivateIpAddress
 Parameters:
-  application:
-    Default: f5app
-    Description: Application Tag.
-    Type: String
   bigIpInstanceProfile:
     Default: ''
     Description: BIG-IP instance profile with applied IAM policy.
@@ -366,14 +355,6 @@ Parameters:
     Type: String
   bigIpRuntimeInitParameters:
     Description: 'REQUIRED - Supply a URL to the bigip-runtime-init parameters file'
-    Type: String
-  cost:
-    Default: f5cost
-    Description: Cost Center Tag.
-    Type: String
-  environment:
-    Default: f5env
-    Description: Environment Tag.
     Type: String
   externalPrimaryPublicId:
     Default: ''
@@ -412,10 +393,6 @@ Parameters:
       used for identifying number of network interfaces. Example: 1NIC - only Mgmt
       subnet id provided, 2NIC - Mgmt and Externa subnets id providedl, 3NIC - Mgmt,
       External and Internal subnets id provided).'
-    Type: String
-  group:
-    Default: f5group
-    Description: Group Tag.
     Type: String
   imageId:
     Description: REQUIRED - Provide BIG-IP AMI ID you wish to deploy.
@@ -472,10 +449,6 @@ Parameters:
       nic.
     MinValue: 0
     Type: Number
-  owner:
-    Default: f5owner
-    Description: Owner Tag.
-    Type: String
   sshKey:
     Description: REQUIRED - Supply the public key that will be used for SSH authentication
       to the BIG-IP and application virtual machines.
@@ -809,19 +782,11 @@ Resources:
             - !Ref 'BigipInternalInterface'
             - !Ref 'BigipStaticInternalInterface'
       Tags:
-        - Key: costcenter
-          Value: !Ref 'cost'
-        - Key: environment
-          Value: !Ref 'environment'
-        - Key: group
-          Value: !Ref 'group'
         - Key: Name
           Value: !Join
             - ''
             - - !Ref 'uniqueString'
               - '-bigip-instance'
-        - Key: owner
-          Value: !Ref 'owner'
       UserData: !Base64
         Fn::Join:
           - ''
