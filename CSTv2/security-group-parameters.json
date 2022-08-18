@@ -1,11 +1,6 @@
 {
   "Parameters": {
-    // "application": "f5app",
-    // "cost": "f5cost",
     "createAppSecurityGroup": "false",
-    // "environment": "f5env",
-    // "group": "f5group",
-    // "owner": "f5owner",
     "restrictedSrcAddressApp": "37.228.202.168/32",
     "restrictedSrcAddressMgmt": "37.228.202.168/32",
     "restrictedSrcPort": "443",
