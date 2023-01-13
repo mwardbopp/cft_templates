@@ -86,6 +86,9 @@ extension_services:
             userType: regular
             password: '{{ ADMIN_PASS }}'
             shell: bash
+          mySystem:
+            class: System
+            mgmtDhcpEnabled: false
           myLicense:
             class: License
             licenseType: licensePool
